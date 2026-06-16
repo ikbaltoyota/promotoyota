@@ -3,394 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Promo Toyota Parung | Muhamad Ikbal</title>
-
+<title>Muhamad Ikbal | Sales Toyota Parung</title>
+<meta name="description" content="Promo Toyota Parung, Bogor, Depok, Tangerang dan Jakarta. Hubungi Muhamad Ikbal Sales Consultant Setiajaya Toyota Parung.">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#f5f5f5;
-color:#333;
-}
-
-/* NAVBAR */
-
-.navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-background:rgba(0,0,0,.85);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:999;
-}
-
-.logo{
-color:white;
-font-size:24px;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
-
-/* HERO */
-
-.hero{
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('IMG-20260429-WA0009.jpg');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-color:white;
-}
-
-.hero-content{
-max-width:900px;
-animation:fadeUp 1s ease;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:10px;
-}
-
-.hero h2{
-font-size:30px;
-font-weight:300;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:30px;
-line-height:1.8;
-}
-
-.btn{
-display:inline-block;
-background:#d60000;
-padding:18px 40px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:50px;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-/* SECTION */
-
-.section{
-padding:80px 8%;
-}
-
-.title{
-text-align:center;
-margin-bottom:40px;
-}
-
-.title h2{
-font-size:40px;
-color:#d60000;
-}
-
-/* PROFILE */
-
-.profile{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.profile img{
-width:100%;
-border-radius:20px;
-}
-
-.profile-text{
-font-size:18px;
-line-height:1.8;
-}
-
-/* PRODUK */
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card-content{
-padding:20px;
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-.price{
-color:#d60000;
-font-size:22px;
-font-weight:bold;
-}
-
-/* SHOWROOM */
-
-.showroom{
-width:100%;
-border-radius:20px;
-margin-top:30px;
-}
-
-/* CTA */
-
-.cta{
-background:#d60000;
-color:white;
-text-align:center;
-padding:80px 20px;
-}
-
-.cta h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-/* WA FLOAT */
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:30px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 20px rgba(0,0,0,.3);
-z-index:999;
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:40px;
-}
-
-.hero h2{
-font-size:22px;
-}
-
-.profile{
-grid-template-columns:1fr;
-}
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f5f5;color:#222}
+.nav{position:fixed;top:0;width:100%;background:#111;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;z-index:1000}
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('IMG-20260429-WA0009.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px}
+.hero img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid #EB0A1E}
+.hero h1{font-size:52px;margin:15px 0}
+.btn{display:inline-block;background:#25D366;color:#fff;padding:16px 30px;border-radius:40px;text-decoration:none;font-weight:bold}
+.section{padding:80px 20px;max-width:1200px;margin:auto}
+.title{text-align:center;margin-bottom:30px;color:#EB0A1E}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.showroom{width:100%;border-radius:20px}
+.cta{background:#EB0A1E;color:#fff;text-align:center;padding:60px 20px}
+.floatwa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;text-decoration:none;padding:18px;border-radius:50%}
 </style>
 </head>
 <body>
-
-<nav class="navbar">
-<div class="logo">TOYOTA PARUNG</div>
-
-<div>
-<a href="#tentang">Tentang</a>
-<a href="#promo">Promo</a>
-<a href="#kontak">Kontak</a>
-</div>
-</nav>
+<div class="nav"><b>TOYOTA PARUNG</b><span>Muhamad Ikbal</span></div>
 
 <section class="hero">
-
-<div class="hero-content">
-
+<div>
+<img src="IMG-20260428-WA0006.jpg" alt="Muhamad Ikbal">
 <h1>MUHAMAD IKBAL</h1>
-
 <h2>Sales Consultant Setiajaya Toyota Parung</h2>
-
-<p>
-Promo Toyota Terbaru 2026<br>
-Melayani Bogor • Depok • Tangerang • Jakarta
-</p>
-
-<a class="btn"
-href="https://wa.me/6285147851507">
-CHAT WHATSAPP
-</a>
-
+<p>DP Ringan • Trade In • Approval Cepat</p><br>
+<a class="btn" href="https://wa.me/6285147851507">Chat WhatsApp</a>
 </div>
-
-</section>
-
-<section class="section" id="tentang">
-
-<div class="title">
-<h2>Tentang Saya</h2>
-</div>
-
-<div class="profile">
-
-<img src="IMG-20260428-WA0006.jpg">
-
-<div class="profile-text">
-
-<p>
-Halo, saya Muhamad Ikbal, Sales Consultant resmi Setiajaya Toyota Parung.
-</p>
-
-<br>
-
-<p>
-Siap membantu kebutuhan Toyota Anda dengan promo terbaik, DP ringan, cicilan terjangkau, dan proses cepat.
-</p>
-
-<br>
-
-<p>
-Konsultasi GRATIS dan siap survey ke lokasi Anda.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="promo">
-
-<div class="title">
-<h2>Mobil Favorit Toyota</h2>
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<img src="IMG-20260428-WA0007.jpg">
-<div class="card-content">
-<h3>Toyota Avanza</h3>
-<p class="price">Mulai 200 Jutaan</p>
-</div>
-</div>
-
-<div class="card">
-<img src="IMG-20260428-WA0008(1).jpg">
-<div class="card-content">
-<h3>Toyota Rush</h3>
-<p class="price">Promo Terbaik</p>
-</div>
-</div>
-
-<div class="card">
-<img src="IMG-20260507-WA0092.jpg">
-<div class="card-content">
-<h3>Toyota Raize</h3>
-<p class="price">DP Ringan</p>
-</div>
-</div>
-
-</div>
-
 </section>
 
 <section class="section">
-
-<div class="title">
-<h2>Showroom Kami</h2>
+<h2 class="title">Promo Toyota Favorit</h2>
+<div class="cards">
+<div class="card"><h3>Avanza</h3><p>Mobil keluarga favorit Indonesia.</p></div>
+<div class="card"><h3>Raize</h3><p>SUV modern dan irit.</p></div>
+<div class="card"><h3>Rush</h3><p>Tangguh untuk keluarga aktif.</p></div>
+<div class="card"><h3>Innova Zenix</h3><p>Hybrid premium Toyota.</p></div>
 </div>
-
-<img class="showroom"
-src="IMG-20260429-WA0009.jpg">
-
 </section>
 
-<section class="cta" id="kontak">
-
-<h2>Dapatkan Promo Toyota Hari Ini</h2>
-
-<p>
-Hubungi saya sekarang untuk simulasi kredit dan penawaran terbaik.
-</p>
-
-<br><br>
-
-<a class="btn"
-href="https://wa.me/6285147851507">
-KONSULTASI SEKARANG
-</a>
-
+<section class="section">
+<h2 class="title">Dealer Resmi Toyota</h2>
+<img class="showroom" src="IMG-20260429-WA0009.jpg" alt="Showroom">
 </section>
 
-<a class="whatsapp"
-href="https://wa.me/6285147851507">
-💬
-</a>
+<section class="cta">
+<h2>Dapatkan Penawaran Terbaik Hari Ini</h2>
+<p>Hubungi saya untuk simulasi kredit dan promo terbaru Toyota.</p><br>
+<a class="btn" href="https://wa.me/6285147851507">Konsultasi Sekarang</a>
+</section>
 
+<a class="floatwa" href="https://wa.me/6285147851507">WA</a>
 </body>
 </html>
