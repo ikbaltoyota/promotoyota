@@ -215,6 +215,8 @@ animation:spin 1s linear infinite;
 
 transform:rotate(360deg);
 
+}@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
 }
-
-}<link rel="stylesheet" href="style.css">
