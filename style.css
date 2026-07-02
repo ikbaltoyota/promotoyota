@@ -231,9 +231,18 @@ nav a:hover::after{
 
     background:var(--primary);
     color:#fff;
+}
+header.scrolled{
+
+background:#fff;
+
+...
+}
+nav a.active{
+
+...
 
 }
-
 /* ===============================
    FLOATING WHATSAPP
 ================================ */
