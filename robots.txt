@@ -1,4 +1,5 @@
 User-agent: *
+
 Allow: /
 
-Sitemap: https://ikbaltoyota.com/sitemap.xml
+Sitemap: https://ikbaltoyota.github.io/promotoyota/sitemap.xml
