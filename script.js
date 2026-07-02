@@ -191,27 +191,6 @@ window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
 /* ==========================================
-   HERO FLOAT EFFECT
-========================================== */
-
-const heroCard = document.querySelector(".hero-card");
-
-if (heroCard) {
-
-    let angle = 0;
-
-    setInterval(() => {
-
-        angle += 0.02;
-
-        heroCard.style.transform =
-            `translateY(${Math.sin(angle) * 8}px)`;
-
-    }, 20);
-
-}
-
-/* ==========================================
    BUTTON RIPPLE EFFECT
 ========================================== */
 
