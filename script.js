@@ -172,3 +172,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 <script src="script.js" defer></script>
+/* ===============================
+   GA4 Event Tracking
+================================= */
+
+// Tracking Klik WhatsApp
+document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(btn){
+    btn.addEventListener("click", function(){
+
+        if (typeof gtag === "function") {
+            gtag("event", "whatsapp_click", {
+                event_category: "Contact",
+                event_label: "WhatsApp Button"
+            });
+        }
+
+    });
+});
+
+// Tracking Klik Telepon
+document.querySelectorAll('a[href^="tel:"]').forEach(function(btn){
+    btn.addEventListener("click", function(){
+
+        if (typeof gtag === "function") {
+            gtag("event", "phone_click", {
+                event_category: "Contact",
+                event_label: "Phone Button"
+            });
+        }
+
+    });
+});
