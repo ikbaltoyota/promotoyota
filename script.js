@@ -175,8 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-});
-<script src="script.js" defer></script>
+})
 /* ===============================
    GA4 Event Tracking
 ================================= */
