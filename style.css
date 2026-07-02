@@ -1,4 +1,198 @@
-/* ======================================
+/* ==========================================================
+   TOYOTA PREMIUM LANDING PAGE V3
+   Website  : https://ikbaltoyota.com
+   Developer: Muhamad Ikbal
+   Version  : 3.0
+========================================================== */
+
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   ROOT
+=========================== */
+
+:root{
+
+    --primary:#e4002b;
+    --secondary:#111827;
+    --dark:#1f2937;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --text:#4b5563;
+
+    --radius:18px;
+
+    --shadow-sm:0 5px 15px rgba(0,0,0,.08);
+    --shadow-md:0 15px 35px rgba(0,0,0,.10);
+    --shadow-lg:0 25px 50px rgba(0,0,0,.15);
+
+    --transition:.35s ease;
+
+}
+
+/* ===========================
+   HTML
+=========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:var(--text);
+    overflow-x:hidden;
+    line-height:1.7;
+    font-size:16px;
+
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,h2,h3,h4,h5,h6{
+
+    color:#111827;
+    font-weight:700;
+    line-height:1.2;
+
+}
+
+p{
+
+    color:var(--text);
+
+}
+
+/* ===========================
+   LINK
+=========================== */
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+    transition:var(--transition);
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+img{
+
+    display:block;
+    max-width:100%;
+    height:auto;
+
+}
+
+/* ===========================
+   LIST
+=========================== */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+
+    padding:90px 0;
+    position:relative;
+
+}
+
+/* ===========================
+   SELECTION
+=========================== */
+
+::selection{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f1f1f1;
+
+}
 MAPS
 ====================================== */
 
