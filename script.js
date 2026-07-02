@@ -208,3 +208,14 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(btn){
 
     });
 });
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+
+    if(loader){
+
+        loader.classList.add("hide");
+
+    }
+
+});
