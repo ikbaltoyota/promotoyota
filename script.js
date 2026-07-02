@@ -42,7 +42,15 @@ window.addEventListener("scroll", () => {
     }
 
 });
+header.scrolled{
 
+background:#ffffff;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
 /* ==========================================
    BACK TO TOP
 ========================================== */
@@ -140,7 +148,17 @@ window.addEventListener("scroll", () => {
     });
 
 });
+nav a.active{
 
+color:var(--primary);
+
+}
+
+nav a.active::after{
+
+width:100%;
+
+}
 /* ==========================================
    SCROLL REVEAL
 ========================================== */
@@ -219,8 +237,46 @@ document.querySelectorAll(".btn").forEach(button => {
         }, 600);
 
     });
+.btn{
 
-});
+position:relative;
+
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+
+width:20px;
+height:20px;
+
+background:rgba(255,255,255,.5);
+
+border-radius:50%;
+
+transform:scale(0);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(20);
+
+opacity:0;
+
+}
+
+}
+
+
 /* ==========================================
    GOOGLE ANALYTICS EVENT TRACKING
 ========================================== */
@@ -285,7 +341,7 @@ function sendAdsConversion() {
 
         gtag("event", "conversion", {
 
-            send_to: "AW-17417997745/AbCdEfGhIjKlMnOp"
+        send_to: "AW-17417997745/XYZ123ABC456"    
 
         });
 
