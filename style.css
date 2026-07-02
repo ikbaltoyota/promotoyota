@@ -1,382 +1,105 @@
-/* ==========================================
-   SECTION TITLE
-========================================== */
+/* ======================================
+MAPS
+====================================== */
 
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
+.maps{
 
-.section-title h2{
-    font-size:40px;
-    font-weight:800;
-    color:#111827;
-    margin-bottom:15px;
-}
+padding:90px 0;
 
-.section-title p{
-    color:#666;
-    max-width:700px;
-    margin:auto;
-}
-
-/* ==========================================
-   PROMO
-========================================== */
-
-.promo{
-    padding:90px 0;
-    background:#ffffff;
-}
-
-.promo-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.promo-card{
-    background:#fff;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s;
-    text-align:center;
-}
-
-.promo-card:hover{
-    transform:translateY(-10px);
-}
-
-.promo-card h3{
-    color:#e4002b;
-    margin-bottom:15px;
-}
-
-.promo-card p{
-    color:#666;
-}
-
-/* ==========================================
-   CARS
-========================================== */
-
-.cars{
-    padding:90px 0;
-    background:#f7f7f7;
-}
-
-.cars-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.car-card{
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    transition:.35s;
-}
-
-.car-card:hover{
-    transform:translateY(-10px);
-}
-
-.car-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.car-card h3{
-    padding:20px 20px 10px;
-    font-size:24px;
-}
-
-.car-card p{
-    padding:0 20px 25px;
-    color:#666;
-}
-
-.car-card .btn-primary{
-    display:block;
-    margin:0 20px 25px;
-    text-align:center;
-}
-
-/* ==========================================
-   WHY CHOOSE US
-========================================== */
-
-.why{
-    padding:90px 0;
-    background:#ffffff;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.why-box{
-    background:#f8f8f8;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    transition:.35s;
-}
-
-.why-box:hover{
-    background:#e4002b;
-    color:#fff;
-}
-
-.why-box:hover p{
-    color:#fff;
-}
-
-.why-box p{
-    color:#666;
-    margin-top:10px;
-}
-
-/* ==========================================
-   SIMULASI
-========================================== */
-
-.simulasi{
-    padding:90px 0;
-    background:linear-gradient(135deg,#e4002b,#b30021);
-    color:#fff;
-}
-
-.simulasi .section-title h2,
-.simulasi .section-title p{
-    color:#fff;
-}
-
-.simulasi-box{
-    text-align:center;
-}
-
-.simulasi .btn-primary{
-    background:#fff;
-    color:#e4002b;
-    font-size:18px;
-    padding:18px 35px;
-}
-
-.simulasi .btn-primary:hover{
-    background:#111827;
-    color:#fff;
-}
-
-/* ==========================================
-   TESTIMONIAL
-========================================== */
-
-.testimonial{
-    padding:90px 0;
-    background:#ffffff;
-}
-
-.testimonial-grid{
-    max-width:800px;
-    margin:auto;
-}
-
-.testi-card{
-    background:#fff;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.testi-card p{
-    margin:25px 0;
-    color:#666;
-}
-
-/* ==========================================
-   CONTACT
-========================================== */
-
-.contact{
-    padding:90px 0;
-    background:#f7f7f7;
-}
-
-.contact-box{
-    max-width:600px;
-    margin:auto;
-    background:#fff;
-    padding:40px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-
-.contact-box img{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    object-fit:cover;
-    margin:auto;
-    margin-bottom:25px;
-    border:6px solid #e4002b;
-}
-
-.contact-box h2{
-    color:#e4002b;
-    margin:20px 0;
-}
-
-.contact-box .btn-primary{
-    display:inline-block;
-    margin-top:20px;
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer{
-    background:#111827;
-    color:#fff;
-    text-align:center;
-    padding:30px 0;
-}
-
-/* ==========================================
-   FLOATING WHATSAPP
-========================================== */
-
-.floating-wa{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:65px;
-    height:65px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-    z-index:999;
-    transition:.3s;
-}
-
-.floating-wa:hover{
-    transform:scale(1.12);
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:768px){
-
-.section-title h2{
-    font-size:30px;
-}
-
-.hero-text h1{
-    font-size:36px;
-}
-
-.contact-box{
-    padding:30px 20px;
-}
-
-.contact-box img{
-    width:140px;
-    height:140px;
-}
-
-.floating-wa{
-    width:55px;
-    height:55px;
-    font-size:28px;
-}
-
-}
-/* =============================
-   SCROLL ANIMATION
-============================= */
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:.8s ease;
+background:#fff;
 
 }
 
-.show{
+.maps-box iframe{
 
-opacity:1;
+width:100%;
 
-transform:translateY(0);
+height:450px;
 
-}
+border:none;
 
-/* =============================
-   ACTIVE MENU
-============================= */
+border-radius:20px;
 
-nav a.active{
-
-color:#e4002b;
+box-shadow:0 15px 35px rgba(0,0,0,.1);
 
 }
 
-/* =============================
-   RIPPLE EFFECT
-============================= */
+/* ======================================
+FAQ
+====================================== */
 
-.btn-primary{
+.faq{
 
-position:relative;
+padding:90px 0;
 
-overflow:hidden;
-
-}
-
-.ripple{
-
-position:absolute;
-
-width:20px;
-
-height:20px;
-
-background:rgba(255,255,255,.5);
-
-border-radius:50%;
-
-transform:scale(0);
-
-animation:ripple .6s linear;
+background:#f8f8f8;
 
 }
 
-@keyframes ripple{
+.faq-item{
 
-to{
+background:#fff;
 
-transform:scale(18);
+padding:25px;
 
-opacity:0;
+margin-bottom:20px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
+
+.faq-item h3{
+
+color:#d71920;
+
+margin-bottom:10px;
+
+}
+
+/* ======================================
+CTA BOTTOM
+====================================== */
+
+.cta-bottom{
+
+padding:100px 0;
+
+background:linear-gradient(135deg,#d71920,#b30000);
+
+text-align:center;
+
+color:#fff;
+
+}
+
+.cta-bottom h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.cta-bottom p{
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:35px;
+
+}
+
+.cta-button{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
 
 }
