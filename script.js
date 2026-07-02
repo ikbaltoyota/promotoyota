@@ -171,3 +171,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+<script src="script.js" defer></script>
