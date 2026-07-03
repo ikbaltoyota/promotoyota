@@ -517,3 +517,24 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM Ready");
 
 }) ;
+// ===============================
+// Google Analytics WhatsApp Event
+// ===============================
+
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(button){
+
+button.addEventListener('click',function(){
+
+gtag('event','whatsapp_click',{
+
+event_category:'Contact',
+
+event_label:'WhatsApp',
+
+value:1
+
+});
+
+});
+
+});
