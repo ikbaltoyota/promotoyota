@@ -1,21 +1,25 @@
-* ==========================================================
-   TOYOTA PREMIUM LANDING PAGE V3
+/* =====================================================
+   TOYOTA PREMIUM V4
    script.js
-========================================================== */
+===================================================== */
 
-/* ==========================================
-   LOADER
-========================================== */
+"use strict";
+
+/* =====================================================
+   PRELOADER
+===================================================== */
 
 window.addEventListener("load", () => {
 
-    const loader = document.querySelector(".loader");
+    const preloader = document.getElementById("preloader");
 
-    if (loader) {
+    if (preloader) {
+
+        preloader.style.opacity = "0";
 
         setTimeout(() => {
 
-            loader.classList.add("hide");
+            preloader.style.display = "none";
 
         }, 500);
 
@@ -23,55 +27,53 @@ window.addEventListener("load", () => {
 
 });
 
-/* ==========================================
-   HEADER SCROLL
-========================================== */
+/* =====================================================
+   STICKY HEADER
+===================================================== */
 
-const header = document.querySelector("header");
+const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 60) {
+    if (!header) return;
 
-        header.classList.add("scrolled");
+    if (window.scrollY > 80) {
+
+        header.classList.add("sticky");
 
     } else {
 
-        header.classList.remove("scrolled");
+        header.classList.remove("sticky");
 
     }
 
 });
-box-shadow:0 15px 35px rgba(0,0,0,.08);
 
-transition:.3s;
-
-}
-/* ==========================================
+/* =====================================================
    BACK TO TOP
-========================================== */
+===================================================== */
 
-const topBtn = document.getElementById("topBtn");
+const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
 
-    if (!topBtn) return;
+    if (!backToTop) return;
 
     if (window.scrollY > 400) {
 
-        topBtn.classList.add("show");
+        backToTop.style.display = "flex";
 
     } else {
 
-        topBtn.classList.remove("show");
+        backToTop.style.display = "none";
 
     }
 
 });
 
-if (topBtn) {
+if (backToTop) {
 
-    topBtn.addEventListener("click", () => {
+    backToTop.addEventListener("click", () => {
 
         window.scrollTo({
 
@@ -85,13 +87,13 @@ if (topBtn) {
 
 }
 
-/* ==========================================
-   SMOOTH SCROLL
-========================================== */
+/* =====================================================
+   SMOOTH SCROLL MENU
+===================================================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function(e) {
+    anchor.addEventListener("click", function (e) {
 
         const target = document.querySelector(this.getAttribute("href"));
 
@@ -108,433 +110,417 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
-/* ==========================================
-   ACTIVE MENU
-========================================== */
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("nav a");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle && navMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+    });
+
+}
+
+/* =====================================================
+   CLOSE MENU AFTER CLICK
+===================================================== */
+
+document.querySelectorAll(".nav-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (navMenu) {
+
+            navMenu.classList.remove("active");
+
+        }
+
+        if (menuToggle) {
+
+            menuToggle.classList.remove("active");
+
+        }
+
+    });
+
+});
+/* =====================================================
+   ACTIVE MENU ON SCROLL
+===================================================== */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-menu a");
 
 window.addEventListener("scroll", () => {
 
-    const scrollY = window.pageYOffset;
+    let current = "";
 
     sections.forEach(section => {
 
-        const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 120;
-        const sectionId = section.getAttribute("id");
+        const sectionHeight = section.clientHeight;
 
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        if (window.scrollY >= sectionTop) {
 
-            navLinks.forEach(link => {
+            current = section.getAttribute("id");
 
-                link.classList.remove("active");
+        }
 
-                if (link.getAttribute("href") === "#" + sectionId) {
+    });
 
-                    link.classList.add("active");
+    navLinks.forEach(link => {
 
-                }
+        link.classList.remove("active");
 
-            });
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
 
         }
 
     });
 
 });
+/* =====================================================
+   SIMULASI KREDIT
+===================================================== */
 
-width:100%;
+const carType = document.getElementById("carType");
+const dpInput = document.getElementById("dp");
+const tenor = document.getElementById("tenor");
+const calculateBtn = document.getElementById("calculateBtn");
+
+const priceResult = document.getElementById("priceResult");
+const dpResult = document.getElementById("dpResult");
+const installmentResult = document.getElementById("installmentResult");
+
+function rupiah(number){
+
+    return "Rp " + number.toLocaleString("id-ID");
 
 }
-/* ==========================================
-   SCROLL REVEAL
-========================================== */
 
-const fadeElements = document.querySelectorAll(
+function calculateSimulation(){
 
-    ".fade-up,.produk-card,.promo-card,.why-card,.testi-card,.faq-item,.about-image,.about-content"
+    if(!carType || !dpInput || !tenor) return;
 
-);
+    const price = Number(carType.value);
 
-const revealOnScroll = () => {
+let defaultDP = 30000000;
 
-    const trigger = window.innerHeight * 0.85;
+switch(price){
 
-    fadeElements.forEach(el => {
+case 240000000:
+defaultDP = 20000000;
+break;
 
-        const top = el.getBoundingClientRect().top;
+case 277000000:
+defaultDP = 25000000;
+break;
 
-        if (top < trigger) {
+case 303000000:
+defaultDP = 30000000;
+break;
 
-            el.classList.add("show");
+case 315000000:
+defaultDP = 35000000;
+break;
 
-        }
+case 430000000:
+defaultDP = 50000000;
+break;
 
-    });
+case 580000000:
+defaultDP = 80000000;
+break;
 
-};
+}
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+if(dpInput.value == "" || Number(dpInput.value) <= 0){
 
-/* ==========================================
-   BUTTON RIPPLE EFFECT
-========================================== */
+dpInput.value = defaultDP;
 
-document.querySelectorAll(".btn").forEach(button => {
+}
+    const loan = price - dp;
 
-    button.addEventListener("click", function (e) {
+    /*
+      Rumus sederhana
+      Pokok / Tenor
+      (Bunga akan kita tambahkan nanti)
+    */
 
-        const ripple = document.createElement("span");
+    const installment = Math.round(loan / months);
 
-        const rect = this.getBoundingClientRect();
+    if(priceResult){
 
-        ripple.style.left = `${e.clientX - rect.left}px`;
-        ripple.style.top = `${e.clientY - rect.top}px`;
-
-        ripple.className = "ripple";
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-
-            ripple.remove();
-
-        }, 600);
-
-    });
-
-/* ==========================================
-   GOOGLE ANALYTICS EVENT TRACKING
-========================================== */
-
-function sendGAEvent(eventName, parameters = {}) {
-
-    if (typeof gtag === "function") {
-
-        gtag("event", eventName, parameters);
+        priceResult.textContent = rupiah(price);
 
     }
 
-}
+    if(dpResult){
 
-/* ==========================================
-   WHATSAPP TRACKING
-========================================== */
+        dpResult.textContent = rupiah(dp);
 
-document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+    }
 
-    button.addEventListener("click", () => {
+    if(installmentResult){
 
-        sendGAEvent("whatsapp_click", {
-
-            event_category: "Contact",
-            event_label: "WhatsApp Button",
-            value: 1
-
-        });
-
-    });
-
-});
-
-/* ==========================================
-   PHONE TRACKING
-========================================== */
-
-document.querySelectorAll('a[href^="tel:"]').forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        sendGAEvent("phone_click", {
-
-            event_category: "Contact",
-            event_label: "Phone Button",
-            value: 1
-
-        });
-
-    });
-
-});
-
-/* ==========================================
-   GOOGLE ADS CONVERSION
-========================================== */
-
-function sendAdsConversion() {
-
-    if (typeof gtag === "function") {
-
-        gtag("event", "conversion", {
-
-        send_to: "AW-17417997745/XYZ123ABC456"    
-
-        });
+        installmentResult.textContent =
+        rupiah(installment) + " / bulan";
 
     }
 
 }
 
-document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+if(calculateBtn){
 
-    button.addEventListener("click", sendAdsConversion);
+    calculateBtn.addEventListener("click", calculateSimulation);
 
-});
+}
 
-/* ==========================================
-   SCROLL DEPTH TRACKING
-========================================== */
+if(carType){
 
-let scroll25 = false;
-let scroll50 = false;
-let scroll75 = false;
-let scroll100 = false;
+    carType.addEventListener("change", calculateSimulation);
 
-window.addEventListener("scroll", () => {
+}
 
-    const pageHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+if(dpInput){
 
-    if (pageHeight <= 0) return;
+    dpInput.addEventListener("input", calculateSimulation);
 
-    const percent =
-        Math.round((window.scrollY / pageHeight) * 100);
+}
 
-    if (percent >= 25 && !scroll25) {
+if(tenor){
 
-        scroll25 = true;
+    tenor.addEventListener("change", calculateSimulation);
 
-        sendGAEvent("scroll_25");
+}
 
-    }
-
-    if (percent >= 50 && !scroll50) {
-
-        scroll50 = true;
-
-        sendGAEvent("scroll_50");
-
-    }
-
-    if (percent >= 75 && !scroll75) {
-
-        scroll75 = true;
-
-        sendGAEvent("scroll_75");
-
-    }
-
-    if (percent >= 100 && !scroll100) {
-
-        scroll100 = true;
-
-        sendGAEvent("scroll_100");
-
-    }
-
-});
-
-/* ==========================================
-   PAGE VIEW TIMER
-========================================== */
-
-setTimeout(() => {
-
-    sendGAEvent("engaged_30_seconds", {
-
-        event_category: "Engagement"
-
-    });
-
-}, 30000);
-
-/* ==========================================
-   OUTBOUND LINK TRACKING
-========================================== */
-
-document.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", function () {
-
-        const href = this.getAttribute("href");
-
-        if (!href) return;
-
-        if (
-            href.startsWith("http") &&
-            !href.includes(location.hostname)
-        ) {
-
-            sendGAEvent("outbound_click", {
-
-                event_category: "Navigation",
-                event_label: href
-
-            });
-
-        }
-
-    });
-
-});
-/* ==========================================================
-   TOYOTA PREMIUM V3
-   FINAL INITIALIZATION
-========================================================== */
-
-/* ==========================================
+calculateSimulation();
+/* =====================================================
    FAQ ACCORDION
-========================================== */
+===================================================== */
 
-document.querySelectorAll(".faq-item").forEach(item => {
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
 
     const answer = item.querySelector("p");
 
-    if (!answer) return;
+    if(answer){
 
-    answer.style.display = "none";
+        answer.style.display = "none";
 
-    item.addEventListener("click", () => {
+    }
 
-        const opened = answer.style.display === "block";
+    item.addEventListener("click",()=>{
 
-        document.querySelectorAll(".faq-item p").forEach(p => {
+        faqItems.forEach(other=>{
 
-            p.style.display = "none";
+            if(other !== item){
+
+                const p = other.querySelector("p");
+
+                if(p){
+
+                    p.style.display = "none";
+
+                }
+
+            }
 
         });
 
-        if (!opened) {
+        if(answer){
 
-            answer.style.display = "block";
+            answer.style.display =
+            answer.style.display === "block"
+            ? "none"
+            : "block";
 
         }
 
     });
 
 });
+/* =====================================================
+   COUNTER
+===================================================== */
 
-/* ==========================================
-   IMAGE LAZY FALLBACK
-========================================== */
+const counters = document.querySelectorAll(".stat-box h3");
 
-document.querySelectorAll("img").forEach(img => {
+let counterStarted = false;
 
-    img.addEventListener("error", function () {
+function startCounter(){
 
-        this.src = "images/no-image.webp";
+    if(counterStarted) return;
+
+    counterStarted = true;
+
+    counters.forEach(counter=>{
+
+        const target =
+        parseInt(counter.innerText);
+
+        let count = 0;
+
+        const speed = target / 60;
+
+        function update(){
+
+            count += speed;
+
+            if(count < target){
+
+                counter.innerText =
+                Math.floor(count) + "+";
+
+                requestAnimationFrame(update);
+
+            }else{
+
+                counter.innerText =
+                target + "+";
+
+            }
+
+        }
+
+        update();
 
     });
-
-});
-
-/* ==========================================
-   BUTTON DISABLE DOUBLE CLICK
-========================================== */
-
-document.querySelectorAll(".btn").forEach(button => {
-
-    button.addEventListener("click", function () {
-
-        this.style.pointerEvents = "none";
-
-        setTimeout(() => {
-
-            this.style.pointerEvents = "auto";
-
-        }, 1200);
-
-    });
-
-});
-
-/* ==========================================
-   CURRENT YEAR
-========================================== */
-
-const year = document.getElementById("year");
-
-if (year) {
-
-    year.textContent = new Date().getFullYear();
 
 }
 
-/* ==========================================
-   PAGE READY
-========================================== */
+window.addEventListener("scroll",()=>{
 
-window.addEventListener("load", () => {
+    const hero = document.querySelector(".hero");
 
-    document.body.classList.add("loaded");
+    if(!hero) return;
 
-    console.log("Toyota Premium Landing Page V3 Loaded");
+    if(window.scrollY > hero.offsetTop){
 
-});
-
-/* ==========================================
-   SAFE MODE
-========================================== */
-
-window.onerror = function (message, source, line, column, error) {
-
-    console.error(
-        "Website Error:",
-        message,
-        "Line:",
-        line
-    );
-
-};
-
-/* ==========================================
-   PERFORMANCE
-========================================== */
-
-window.addEventListener("pageshow", () => {
-
-    if ("requestIdleCallback" in window) {
-
-        requestIdleCallback(() => {
-
-            console.log("Idle Loaded");
-
-        });
+        startCounter();
 
     }
 
 });
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
-/* ==========================================
-   FINAL INIT
-========================================== */
+const revealItems = document.querySelectorAll(
 
-document.addEventListener("DOMContentLoaded", () => {
+".promo-card,.car-card,.testimonial-card,.faq-item,.stat-box"
 
-    console.log("DOM Ready");
+);
 
-}) ;
-// ===============================
-// Google Analytics WhatsApp Event
-// ===============================
+function reveal(){
 
-document.querySelectorAll('a[href*="wa.me"]').forEach(function(button){
+    const trigger = window.innerHeight * .85;
 
-button.addEventListener('click',function(){
+    revealItems.forEach(item=>{
 
-gtag('event','whatsapp_click',{
+        const top = item.getBoundingClientRect().top;
 
-event_category:'Contact',
+        if(top < trigger){
 
-event_label:'WhatsApp',
+            item.classList.add("show");
 
-value:1
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+/* =====================================================
+   BUTTON RIPPLE EFFECT
+===================================================== */
+
+document.querySelectorAll(".btn-primary,.btn-secondary").forEach(button=>{
+
+    button.addEventListener("click",function(e){
+
+        const ripple=document.createElement("span");
+
+        const rect=this.getBoundingClientRect();
+
+        const size=Math.max(rect.width,rect.height);
+
+        ripple.style.width=size+"px";
+        ripple.style.height=size+"px";
+
+        ripple.style.left=e.clientX-rect.left-size/2+"px";
+        ripple.style.top=e.clientY-rect.top-size/2+"px";
+
+        ripple.classList.add("ripple");
+
+        this.appendChild(ripple);
+
+        setTimeout(()=>{
+
+            ripple.remove();
+
+        },600);
+
+    });
 
 });
 
-});
+/* =====================================================
+   LAZY IMAGE
+===================================================== */
 
-});
+const lazyImages=document.querySelectorAll("img[loading='lazy']");
+
+if("IntersectionObserver" in window){
+
+    const observer=new IntersectionObserver(entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                const img=entry.target;
+
+                img.src=img.dataset.src || img.src;
+
+                observer.unobserve(img);
+
+            }
+
+        });
+
+    });
+
+    lazyImages.forEach(img=>observer.observe(img));
+
+}
+
+/* =====================================================
+   COPYRIGHT YEAR
+===================================================== */
+
+const year=document.getElementById("year");
+
+if(year){
+
+    year.textContent=new Date().getFullYear();
+
+}
+
+/* =====================================================
+   PAGE LOADED
+===================================================== */
+
+console.log("Toyota Premium V4 Loaded Successfully");
