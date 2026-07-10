@@ -2248,3 +2248,86 @@ transform:translateY(60px);
 transition:.7s;
 
 }
+
+/* ===========================
+   PREMIUM PRELOADER
+=========================== */
+
+#preloader{
+
+    position:fixed;
+    inset:0;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:.5s;
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:90px;
+    margin:auto;
+    margin-bottom:25px;
+    animation:logoFloat 2s infinite ease-in-out;
+
+}
+
+.loader-ring{
+
+    width:60px;
+    height:60px;
+    margin:auto;
+    border-radius:50%;
+    border:5px solid #ececec;
+    border-top:5px solid #EB0A1E;
+    animation:spin .9s linear infinite;
+
+}
+
+.loader-content p{
+
+    margin-top:20px;
+    font-weight:600;
+    color:#666;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
