@@ -242,19 +242,31 @@ defaultDP = 80000000;
 break;
 
 }
-
 if(dpInput.value == "" || Number(dpInput.value) <= 0){
-
     dpInput.value = defaultDP;
-
 }
+
+const dp = Number(dpInput.value);
+const months = Number(tenor.value);
 
 const loan = price - dp;
-
 const installment = Math.round(loan / months);
 
+   if (priceResult) {
+    priceResult.textContent = rupiah(price);
 }
 
+if (dpResult) {
+    dpResult.textContent = rupiah(dp);
+}
+
+if (installmentResult) {
+    installmentResult.textContent =
+        rupiah(installment) + " / bulan";
+}
+
+}
+   
 if(calculateBtn){
 
     calculateBtn.addEventListener("click", calculateSimulation);
