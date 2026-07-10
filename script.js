@@ -8,7 +8,6 @@
 /* =====================================================
    PRELOADER
 ===================================================== */
-
 window.addEventListener("load", () => {
 
     const preloader = document.querySelector(".loader");
@@ -26,6 +25,7 @@ window.addEventListener("load", () => {
     }
 
 });
+
 
 /* =====================================================
    STICKY HEADER
