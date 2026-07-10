@@ -11,7 +11,7 @@
 
 window.addEventListener("load", () => {
 
-    const preloader = document.getElementById("preloader");
+    const preloader = document.querySelector(".loader");
 
     if (preloader) {
 
@@ -245,37 +245,13 @@ break;
 
 if(dpInput.value == "" || Number(dpInput.value) <= 0){
 
-dpInput.value = defaultDP;
+    dpInput.value = defaultDP;
 
 }
-    const loan = price - dp;
 
-    /*
-      Rumus sederhana
-      Pokok / Tenor
-      (Bunga akan kita tambahkan nanti)
-    */
+const loan = price - dp;
 
-    const installment = Math.round(loan / months);
-
-    if(priceResult){
-
-        priceResult.textContent = rupiah(price);
-
-    }
-
-    if(dpResult){
-
-        dpResult.textContent = rupiah(dp);
-
-    }
-
-    if(installmentResult){
-
-        installmentResult.textContent =
-        rupiah(installment) + " / bulan";
-
-    }
+const installment = Math.round(loan / months);
 
 }
 
