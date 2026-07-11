@@ -1283,3 +1283,37 @@ section,
     }
 
 }
+.harga{
+    margin:12px 0 6px;
+    font-size:22px;
+    font-weight:700;
+    color:#e60012;
+    text-align:center;
+}
+
+.dp{
+    margin:0 0 16px;
+    font-size:16px;
+    font-weight:600;
+    color:#16a34a;
+    text-align:center;
+}
+/* ==========================
+   FOTO SALES
+========================== */
+
+.foto-sales{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #EB0A1E; /* Merah Toyota */
+    display:block;
+    margin:20px auto;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    background:#fff;
+}
+.foto-sales:hover{
+    transform:scale(1.05);
+    transition:0.3s ease;
+}
