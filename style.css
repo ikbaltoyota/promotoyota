@@ -1,17 +1,6 @@
-y/* =====================================================
-   TOYOTA PREMIUM V4
-   style.css
-===================================================== */
-
-/* ==========================
-   GOOGLE FONT
-========================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* ==========================
+/* ===========================
    RESET
-========================== */
+=========================== */
 
 *{
     margin:0;
@@ -24,2313 +13,317 @@ html{
 }
 
 body{
-
     font-family:'Poppins',sans-serif;
-
-    background:#ffffff;
-
-    color:#222;
-
-    overflow-x:hidden;
-
-    line-height:1.6;
-
-}
-
-/* ==========================
-   VARIABLES
-========================== */
-
-:root{
-
-    --primary:#EB0A1E;
-
-    --secondary:#111111;
-
-    --white:#ffffff;
-
-    --gray:#f5f5f5;
-
-    --text:#555;
-
-    --radius:18px;
-
-    --shadow:0 15px 40px rgba(0,0,0,.08);
-
-}
-
-/* ==========================
-   CONTAINER
-========================== */
-
-.container{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-}
-
-/* ==========================
-   IMAGE
-========================== */
-
-img{
-
-    width:100%;
-
-    display:block;
-
-}
-
-/* ==========================
-   LINK
-========================== */
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-/* ==========================
-   UL
-========================== */
-
-ul{
-
-    list-style:none;
-
-}
-
-/* ==========================
-   SECTION
-========================== */
-
-section{
-
-    padding:90px 0;
-
-}
-
-/* ==========================
-   HEADING
-========================== */
-
-h1{
-
-    font-size:55px;
-
-    line-height:1.2;
-
-    color:var(--secondary);
-
-}
-
-h2{
-
-    font-size:38px;
-
-    margin-bottom:20px;
-
-    color:var(--secondary);
-
-}
-
-h3{
-
-    font-size:22px;
-
-}
-
-p{
-
-    color:var(--text);
-
-}
-
-/* ==========================
-   BUTTON
-========================== */
-
-.btn-primary{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    padding:16px 34px;
-
-    background:var(--primary);
-
-    color:#fff;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:var(--shadow);
-
-}
-
-.btn-secondary{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:16px 34px;
-
-    border:2px solid var(--primary);
-
-    color:var(--primary);
-
-    border-radius:50px;
-
-    transition:.35s;
-
-}
-
-.btn-secondary:hover{
-
-    background:var(--primary);
-
-    color:#fff;
-
-}
-
-/* ==========================
-   SECTION TITLE
-========================== */
-
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
-}
-
-.section-title span{
-
-    display:inline-block;
-
-    color:var(--primary);
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
-    letter-spacing:2px;
-
-}
-
-.section-title p{
-
-    max-width:700px;
-
-    margin:auto;
-
-}
-/* =====================================================
-   TOP BAR
-===================================================== */
-
-.topbar{
-
-    background:#111;
-
-    color:#fff;
-
-    padding:10px 0;
-
-    font-size:14px;
-
-}
-
-.topbar .container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-}
-
-.topbar-left,
-.topbar-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:20px;
-
-}
-
-.topbar a{
-
-    color:#fff;
-
-    transition:.3s;
-
-}
-
-.topbar a:hover{
-
-    color:#EB0A1E;
-
-}
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-#header{
-
-    position:sticky;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:999;
-
-}
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar{
-
-    background:rgba(255,255,255,.95);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-
-}
-
-.navbar .container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    min-height:85px;
-
-}
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-.logo img{
-
-    width:60px;
-
-}
-
-.logo-text h2{
-
-    font-size:24px;
-
-    margin:0;
-
-    color:#EB0A1E;
-
-}
-
-.logo-text span{
-
-    font-size:13px;
-
-    color:#666;
-
-}
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.nav-menu{
-
-    display:flex;
-
-    gap:35px;
-
-    align-items:center;
-
-}
-
-.nav-menu a{
-
-    font-weight:600;
-
-    color:#222;
-
-    transition:.3s;
-
-    position:relative;
-
-}
-
-.nav-menu a:hover{
-
-    color:#EB0A1E;
-
-}
-
-.nav-menu a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:#EB0A1E;
-
-    transition:.3s;
-
-}
-
-.nav-menu a:hover::after{
-
-    width:100%;
-
-}
-
-/* =====================================================
-   ACTIVE MENU
-===================================================== */
-
-.nav-menu a.active{
-
-    color:#EB0A1E;
-
-}
-
-.nav-menu a.active::after{
-
-    width:100%;
-
-}
-
-/* =====================================================
-   BUTTON WA
-===================================================== */
-
-.btn-wa{
-
-    background:#25D366;
-
-    color:#fff;
-
-    padding:14px 28px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    transition:.3s;
-
-}
-
-.btn-wa:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 25px rgba(37,211,102,.35);
-
-}
-
-/* =====================================================
-   MOBILE BUTTON
-===================================================== */
-
-.menu-toggle{
-
-    display:none;
-
-    width:45px;
-
-    height:45px;
-
-    border:none;
-
-    background:#EB0A1E;
-
-    color:#fff;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-}
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    position:relative;
-
-    background:linear-gradient(135deg,#ffffff 0%,#f8f8f8 100%);
-
-    overflow:hidden;
-
-    padding:120px 0;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-
-    height:650px;
-
-    background:rgba(235,10,30,.08);
-
-    border-radius:50%;
-
-    top:-250px;
-
-    right:-250px;
-
-}
-
-.hero-container{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    align-items:center;
-
-    gap:70px;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-/* ==========================
-   HERO CONTENT
-========================== */
-
-.hero-content{
-
-    animation:fadeUp .8s ease;
-
-}
-
-.hero-badge{
-
-    display:inline-block;
-
-    background:#EB0A1E;
-
-    color:#fff;
-
-    padding:10px 22px;
-
-    border-radius:40px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    margin-bottom:25px;
-
-}
-
-.hero-content h1{
-
-    font-size:58px;
-
-    font-weight:800;
-
-    line-height:1.15;
-
-    margin-bottom:25px;
-
-}
-
-.hero-content h1 span{
-
-    display:block;
-
-    color:#EB0A1E;
-
-}
-
-.hero-content p{
-
-    font-size:18px;
-
-    color:#555;
-
-    margin-bottom:35px;
-
-    max-width:560px;
-
-}
-
-/* ==========================
-   BUTTON
-========================== */
-
-.hero-button{
-
-    display:flex;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:50px;
-
-}
-
-/* ==========================
-   HERO STAT
-========================== */
-
-.hero-stat{
-
-    display:flex;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
-}
-
-.stat-box{
-
-    background:#fff;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-    min-width:140px;
-
-    transition:.35s;
-
-}
-
-.stat-box:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.stat-box h3{
-
-    font-size:34px;
-
-    color:#EB0A1E;
-
-    margin-bottom:8px;
-
-}
-
-.stat-box span{
-
-    color:#666;
-
-    font-size:15px;
-
-}
-
-/* ==========================
-   HERO IMAGE
-========================== */
-
-.hero-image{
-
-    position:relative;
-
-    animation:float 5s ease-in-out infinite;
-
-}
-
-.hero-image img{
-
-    width:100%;
-
-    max-width:650px;
-
-    margin:auto;
-
-    filter:drop-shadow(0 35px 40px rgba(0,0,0,.18));
-
-}
-
-/* ==========================
-   TRUST
-========================== */
-
-.trust{
-
-    background:#fff;
-
-    padding:35px 0;
-
-    box-shadow:0 -8px 30px rgba(0,0,0,.05);
-
-}
-
-.trust .container{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-}
-
-.trust-item{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
-    font-weight:600;
-
-}
-
-.trust-item i{
-
-    color:#EB0A1E;
-
-    font-size:22px;
-
-}
-
-/* ==========================
-   ANIMATION
-========================== */
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-18px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(50px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-/* =====================================================
-   PROMO SECTION
-===================================================== */
-
-.promo{
-
-    background:#f8f9fb;
-
-}
-
-.promo-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-}
-
-.promo-card{
-
-    background:#fff;
-
-    padding:40px 30px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    transition:.35s;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.06);
-
-    border:1px solid rgba(0,0,0,.05);
-
-}
-
-.promo-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-
-}
-
-.promo-icon{
-
-    width:80px;
-
-    height:80px;
-
-    margin:0 auto 25px;
-
-    border-radius:50%;
-
-    background:#EB0A1E;
-
-    color:#fff;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:32px;
-
-}
-
-.promo-card h3{
-
-    margin-bottom:15px;
-
-    font-size:22px;
-
-    color:#111;
-
-}
-
-.promo-card p{
-
-    color:#666;
-
-    font-size:15px;
-
-    line-height:1.8;
-
-}
-
-.promo-cta{
-
-    margin-top:60px;
-
-    text-align:center;
-
-}
-.promo-banner{
-
-    background:linear-gradient(135deg,#EB0A1E,#C50018);
-
-    color:#fff;
-
-    padding:45px;
-
-    border-radius:25px;
-
-    margin-bottom:60px;
-
-    text-align:center;
-
-    box-shadow:0 20px 45px rgba(235,10,30,.25);
-
-}
-
-.promo-banner h3{
-
-    font-size:34px;
-
-    margin-bottom:15px;
-
-}
-
-.promo-banner p{
-
-    color:#fff;
-
-    font-size:18px;
-
-}
-/* =====================================================
-   CARS SECTION
-===================================================== */
-
-.cars{
-
-    background:#ffffff;
-
-}
-
-.cars-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-/* ==========================
-   CARD
-========================== */
-
-.car-card{
-
-    background:#fff;
-
-    border-radius:25px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    transition:.35s;
-
-    border:1px solid #eee;
-
-}
-
-.car-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 60px rgba(0,0,0,.15);
-
-}
-
-/* ==========================
-   IMAGE
-========================== */
-
-.car-card img{
-
-    width:100%;
-
-    height:240px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.car-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-/* ==========================
-   CONTENT
-========================== */
-
-.car-content{
-
-    padding:28px;
-
-}
-
-.car-content h3{
-
-    font-size:26px;
-
-    margin-bottom:10px;
-
-    color:#111;
-
-}
-
-.car-content p{
-
-    font-size:16px;
-
-    color:#666;
-
-    margin-bottom:20px;
-
-}
-
-/* ==========================
-   PRICE
-========================== */
-
-.car-price{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:25px;
-
-}
-
-.price{
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:#EB0A1E;
-
-}
-
-.price small{
-
-    display:block;
-
-    font-size:13px;
-
-    color:#666;
-
-}
-
-/* ==========================
-   FEATURE
-========================== */
-
-.car-feature{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:12px;
-
-    margin-bottom:25px;
-
-}
-
-.feature-box{
-
-    background:#f8f8f8;
-
-    padding:12px;
-
-    border-radius:12px;
-
-    text-align:center;
-
-}
-
-.feature-box i{
-
-    color:#EB0A1E;
-
-    font-size:20px;
-
-    margin-bottom:8px;
-
-}
-
-.feature-box span{
-
-    display:block;
-
-    font-size:13px;
-
-    color:#555;
-
-}
-
-/* ==========================
-   BUTTON
-========================== */
-
-.car-button{
-
-    display:flex;
-
-    gap:12px;
-
-}
-
-.car-button a{
-
-    flex:1;
-
-    text-align:center;
-
-}
-/* =====================================================
-   SIMULATION
-===================================================== */
-
-.simulation{
-
-    background:#f8f9fb;
-
-}
-
-.simulation-wrapper{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:50px;
-
-    align-items:start;
-
-}
-
-.simulation-form,
-.simulation-result{
-
-    background:#fff;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-}
-
-.form-group{
-
-    margin-bottom:25px;
-
-}
-
-.form-group label{
-
-    display:block;
-
-    margin-bottom:10px;
-
-    font-weight:600;
-
-    color:#222;
-
-}
-
-.form-group input,
-.form-group select{
-
-    width:100%;
-
-    padding:16px;
-
-    border:1px solid #ddd;
-
-    border-radius:12px;
-
-    font-size:16px;
-
-    font-family:'Poppins',sans-serif;
-
-}
-
-.form-group input:focus,
-.form-group select:focus{
-
-    outline:none;
-
-    border-color:#EB0A1E;
-
-}
-
-.simulation-result h3{
-
-    margin-bottom:30px;
-
-}
-
-.result-box{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-    margin-bottom:35px;
-
-}
-
-.result-item{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    padding:18px;
-
     background:#f5f5f5;
-
-    border-radius:12px;
-
-}
-
-.result-item strong{
-
-    color:#EB0A1E;
-
-    font-size:18px;
-
-}
-
-/* =====================================================
-   TESTIMONIAL
-===================================================== */
-
-.testimonial{
-
-    background:#fff;
-
-}
-
-.testimonial-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-}
-
-.testimonial-card{
-
-    background:#fff;
-
-    padding:35px;
-
-    border-radius:20px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-    transition:.35s;
-
-}
-
-.testimonial-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.stars{
-
-    color:#FFD700;
-
-    font-size:22px;
-
-    margin-bottom:20px;
-
-}
-
-.testimonial-card p{
-
-    margin-bottom:20px;
-
-    color:#555;
-
-    line-height:1.8;
-
-}
-
-.testimonial-card h4{
-
-    margin-bottom:5px;
-
-}
-
-.testimonial-card span{
-
-    color:#888;
-
-    font-size:14px;
-
-}
-
-/* =====================================================
-   FAQ
-===================================================== */
-
-.faq{
-
-    background:#f8f9fb;
-
-}
-
-.faq-wrapper{
-
-    max-width:900px;
-
-    margin:auto;
-
-}
-
-.faq-item{
-
-    background:#fff;
-
-    margin-bottom:20px;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-
-}
-
-.faq-item h3{
-
-    margin-bottom:15px;
-
-    color:#111;
-
-}
-
-.faq-item p{
-
-    color:#666;
-
-}
-
-/* =====================================================
-   CTA
-===================================================== */
-
-.cta{
-
-    background:linear-gradient(135deg,#EB0A1E,#B80018);
-
-    color:#fff;
-
-}
-
-.cta-box{
-
-    text-align:center;
-
-    max-width:800px;
-
-    margin:auto;
-
-}
-
-.cta-box h2{
-
-    color:#fff;
-
-    font-size:44px;
-
-    margin-bottom:20px;
-
-}
-
-.cta-box p{
-
-    color:#fff;
-
-    margin-bottom:40px;
-
-    font-size:18px;
-
-}
-
-.cta .btn-primary{
-
-    background:#fff;
-
-    color:#EB0A1E;
-
-}
-
-.cta .btn-primary:hover{
-
-    background:#111;
-
-    color:#fff;
-
-}
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-
-    background:#111;
-
-    color:#fff;
-
-    padding:80px 0 25px;
-
-}
-
-.footer-grid{
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr 1fr;
-
-    gap:40px;
-
-    margin-bottom:50px;
-
-}
-
-.footer-item h3{
-
-    margin-bottom:20px;
-
-    color:#fff;
-
-    font-size:22px;
-
-}
-
-.footer-item p{
-
-    color:#ccc;
-
-    margin-bottom:15px;
-
-    line-height:1.8;
-
-}
-
-.footer-item ul{
-
-    padding:0;
-
-}
-
-.footer-item ul li{
-
-    margin-bottom:15px;
-
-}
-
-.footer-item ul li a{
-
-    color:#ccc;
-
-    transition:.3s;
-
-}
-
-.footer-item ul li a:hover{
-
-    color:#EB0A1E;
-
-}
-
-.footer-item i{
-
-    color:#EB0A1E;
-
-    margin-right:10px;
-
-}
-
-/* ==========================
-   SOCIAL
-========================== */
-
-.social{
-
-    display:flex;
-
-    gap:15px;
-
-}
-
-.social a{
-
-    width:45px;
-
-    height:45px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#222;
-
-    border-radius:50%;
-
-    color:#fff;
-
-    transition:.35s;
-
-}
-
-.social a:hover{
-
-    background:#EB0A1E;
-
-    transform:translateY(-5px);
-
-}
-
-/* ==========================
-   FOOTER BOTTOM
-========================== */
-
-.footer-bottom{
-
-    border-top:1px solid rgba(255,255,255,.1);
-
-    padding-top:25px;
-
-    text-align:center;
-
-}
-
-.footer-bottom p{
-
-    color:#999;
-
-}
-
-/* =====================================================
-   FLOATING WHATSAPP
-===================================================== */
-
-.floating-wa{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:25px;
-
-    width:65px;
-
-    height:65px;
-
-    background:#25D366;
-
-    color:#fff;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    font-size:30px;
-
-    box-shadow:0 15px 35px rgba(37,211,102,.35);
-
-    z-index:999;
-
-    transition:.35s;
-
-}
-
-.floating-wa:hover{
-
-    transform:scale(1.1);
-
-}
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#backToTop{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:105px;
-
-    width:55px;
-
-    height:55px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#EB0A1E;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    box-shadow:0 10px 25px rgba(235,10,30,.35);
-
-    display:none;
-
-    transition:.35s;
-
-    z-index:998;
-
-}
-
-#backToTop:hover{
-
-    transform:translateY(-6px);
-
-}
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width:992px){
-
-.container{
-
-    width:92%;
-
-}
-
-.hero-container{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
-}
-
-.hero-content p{
-
-    margin:auto auto 35px;
-
-}
-
-.hero-button{
-
-    justify-content:center;
-
-}
-
-.hero-stat{
-
-    justify-content:center;
-
-}
-
-.trust .container{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.promo-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.cars-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.testimonial-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.simulation-wrapper{
-
-    grid-template-columns:1fr;
-
-}
-
-.footer-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-.topbar{
-
-    display:none;
-
-}
-
-.nav-menu{
-
-    display:none;
-
-}
-
-.menu-toggle{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-.logo img{
-
-    width:50px;
-
-}
-
-.logo-text h2{
-
-    font-size:20px;
-
-}
-
-.logo-text span{
-
-    display:none;
-
-}
-
-.btn-wa{
-
-    display:none;
-
-}
-
-.hero{
-
-    padding:80px 0;
-
-}
-
-.hero-content h1{
-
-    font-size:38px;
-
-}
-
-.hero-content p{
-
-    font-size:16px;
-
-}
-
-.hero-image{
-
-    margin-top:30px;
-
-}
-
-.hero-stat{
-
-    flex-direction:column;
-
-}
-
-.stat-box{
-
-    width:100%;
-
-}
-
-.section-title h2{
-
-    font-size:30px;
-
-}
-
-.promo-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.cars-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.car-content{
-
-    padding:20px;
-
-}
-
-.car-button{
-
-    flex-direction:column;
-
-}
-
-.car-feature{
-
-    grid-template-columns:1fr;
-
-}
-
-.footer-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.footer{
-
-    text-align:center;
-
-}
-
-.social{
-
-    justify-content:center;
-
-}
-
-.floating-wa{
-
-    width:60px;
-
-    height:60px;
-
-    font-size:28px;
-
-    right:20px;
-
-    bottom:20px;
-
-}
-
-#backToTop{
-
-    right:20px;
-
-    bottom:95px;
-
-}
-
-}
-
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width:480px){
-
-.hero-content h1{
-
-    font-size:32px;
-
-}
-
-h2{
-
-    font-size:26px;
-
-}
-
-.btn-primary,
-.btn-secondary{
-
-    width:100%;
-
-}
-
-.hero-button{
-
-    flex-direction:column;
-
-}
-
-.section{
-
-    padding:60px 0;
-
-}
-
-}
-/* =====================================================
-   PREMIUM EFFECT
-===================================================== */
-
-/* Smooth Animation */
-
-*{
-
-transition:all .3s ease;
-
-}
-
-/* Scroll Offset */
-
-html{
-
-scroll-padding-top:100px;
-
-}
-
-/* Selection */
-
-::selection{
-
-background:#EB0A1E;
-
-color:#fff;
-
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#f5f5f5;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#EB0A1E;
-
-border-radius:20px;
-
-}
-
-/* Hover Image */
-
-img{
-
-transition:.5s;
-
-}
-
-img:hover{
-
-transform:scale(1.02);
-
-}
-
-/* Card Hover */
-
-.promo-card,
-.car-card,
-.testimonial-card,
-.faq-item,
-.stat-box{
-
-transition:.35s;
-
-}
-
-.promo-card:hover,
-.car-card:hover,
-.testimonial-card:hover,
-.faq-item:hover,
-.stat-box:hover{
-
-transform:translateY(-10px);
-
-}
-
-/* Shadow */
-
-.shadow{
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-}
-
-/* Border Radius */
-
-.radius{
-
-border-radius:20px;
-
-}
-
-/* Margin */
-
-.mb-20{
-
-margin-bottom:20px;
-
-}
-
-.mb-40{
-
-margin-bottom:40px;
-
-}
-
-.mt-40{
-
-margin-top:40px;
-
-}
-
-/* Loading */
-
-#preloader{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:#fff;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:99999;
-
-}
-
-#preloader::before{
-
-content:"";
-
-width:55px;
-
-height:55px;
-
-border-radius:50%;
-
-border:6px solid #eee;
-
-border-top:6px solid #EB0A1E;
-
-animation:loading 1s linear infinite;
-
-}
-
-@keyframes loading{
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
-/* ==========================================
-   STICKY HEADER
-========================================== */
-
-#header.sticky{
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    animation:headerDown .35s;
-
-}
-
-@keyframes headerDown{
-
-    from{
-
-        transform:translateY(-100%);
-
-    }
-
-    to{
-
-        transform:translateY(0);
-
-    }
-
-}
-/* ==========================================
-   MOBILE NAVIGATION
-========================================== */
-
-@media(max-width:768px){
-
-.nav-menu{
-
-position:absolute;
-
-top:85px;
-
-left:0;
-
-width:100%;
-
-background:#fff;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-padding:30px 0;
-
-gap:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-transform:translateY(-150%);
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.35s;
-
-}
-
-.nav-menu.active{
-
-transform:translateY(0);
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-.menu-toggle{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-}
-/* ==========================================
-   HAMBURGER ACTIVE
-========================================== */
-
-.menu-toggle.active{
-
-background:#111;
-
-transform:rotate(90deg);
-
-}
-/* ==========================================
-   SCROLL REVEAL
-========================================== */
-
-.promo-card,
-.car-card,
-.testimonial-card,
-.faq-item,
-.stat-box{
-
-opacity:0;
-
-transform:translateY(60px);
-
-transition:.7s;
-
+    color:#222;
+    line-height:1.6;
 }
 
 /* ===========================
-   PREMIUM PRELOADER
+   CONTAINER
 =========================== */
 
-#preloader{
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
 
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo{
+    height:55px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#EB0A1E;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    padding:70px 0;
+    background:#fff;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:44px;
+    color:#EB0A1E;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:520px;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+    display:inline-block;
+    background:#EB0A1E;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c10018;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+    padding:70px 0;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:34px;
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#EB0A1E;
+    margin-bottom:10px;
+}
+
+/* ===========================
+   CARS
+=========================== */
+
+.car-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.car-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.car-card:hover{
+    transform:translateY(-5px);
+}
+
+.car-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.car-card h3{
+    padding:20px;
+}
+
+/* ===========================
+   SIMULATION
+=========================== */
+
+.simulation{
+    text-align:center;
+    background:#fff;
+}
+
+.simulation p{
+    margin-bottom:25px;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta{
+    background:#EB0A1E;
+    color:#fff;
+    text-align:center;
+}
+
+.cta h2{
+    color:#fff;
+}
+
+.cta p{
+    margin-bottom:25px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer p{
+    margin-top:8px;
+}
+
+/* ===========================
+   FLOATING WA
+=========================== */
+
+.floating-wa{
     position:fixed;
-    inset:0;
-    background:#ffffff;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
-    z-index:99999;
-    transition:.5s;
+    font-size:28px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    transition:.3s;
 }
 
-.loader-content{
-
-    text-align:center;
-
+.floating-wa:hover{
+    transform:scale(1.08);
 }
 
-.loader-logo{
+/* ===========================
+   RESPONSIVE
+=========================== */
 
-    width:90px;
-    margin:auto;
-    margin-bottom:25px;
-    animation:logoFloat 2s infinite ease-in-out;
+@media(max-width:992px){
 
-}
+    .hero-content{
+        flex-direction:column;
+        text-align:center;
+    }
 
-.loader-ring{
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-    width:60px;
-    height:60px;
-    margin:auto;
-    border-radius:50%;
-    border:5px solid #ececec;
-    border-top:5px solid #EB0A1E;
-    animation:spin .9s linear infinite;
-
-}
-
-.loader-content p{
-
-    margin-top:20px;
-    font-weight:600;
-    color:#666;
-
-}
-
-@keyframes spin{
-
-    100%{
-
-        transform:rotate(360deg);
-
+    .car-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
-@keyframes logoFloat{
+@media(max-width:768px){
 
-    0%{
-
-        transform:translateY(0);
-
+    header .container{
+        flex-direction:column;
+        gap:15px;
     }
 
-    50%{
-
-        transform:translateY(-10px);
-
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
     }
 
-    100%{
-
-        transform:translateY(0);
-
+    .hero-text h1{
+        font-size:32px;
     }
 
-}
-.loader {
-    display: none !important;
+    section h2{
+        font-size:28px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .car-grid{
+        grid-template-columns:1fr;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
 }
