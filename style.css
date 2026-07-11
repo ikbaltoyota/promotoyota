@@ -1317,3 +1317,45 @@ section,
     transform:scale(1.05);
     transition:0.3s ease;
 }
+.wa-form{
+padding:80px 0;
+background:#f7f7f7;
+}
+
+.wa-form form{
+max-width:650px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.wa-form input,
+.wa-form select,
+.wa-form textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.wa-form button{
+background:#25D366;
+color:#fff;
+border:none;
+padding:15px;
+font-size:18px;
+font-weight:700;
+border-radius:10px;
+cursor:pointer;
+}
+
+.review-box{
+max-width:600px;
+margin:auto;
+text-align:center;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
