@@ -1,64 +1,61 @@
-// ===============================
-// TOYOTA LANDING PAGE
-// script.js
-// ===============================
+// =========================================
+// MOBILE MENU
+// =========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+const menuToggle = document.querySelector(".menu-toggle");
+const navbar = document.querySelector(".navbar");
 
-    // Efek muncul saat halaman dimuat
-    document.body.style.opacity = "0";
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+}
 
-    setTimeout(() => {
-        document.body.style.transition = "opacity .5s ease";
-        document.body.style.opacity = "1";
-    }, 100);
+// =========================================
+// STICKY HEADER
+// =========================================
 
-    // Smooth scroll untuk menu
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+const header = document.querySelector(".header");
 
-        link.addEventListener("click", function (e) {
+window.addEventListener("scroll", () => {
 
-            const target = document.querySelector(this.getAttribute("href"));
+    if (window.scrollY > 80) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 
-            if (target) {
-                e.preventDefault();
+});
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
+// =========================================
+// SMOOTH SCROLL
+// =========================================
 
-        });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+            navbar.classList.remove("active");
+
+        }
 
     });
 
 });
 
-// ===============================
-// Header berubah saat discroll
-// ===============================
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 60) {
-
-        header.style.boxShadow = "0 8px 20px rgba(0,0,0,.12)";
-        header.style.background = "#ffffff";
-
-    } else {
-
-        header.style.boxShadow = "0 2px 8px rgba(0,0,0,.08)";
-
-    }
-
-});
-
-// ===============================
-// Animasi card saat muncul
-// ===============================
+// =========================================
+// SCROLL ANIMATION
+// =========================================
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -66,8 +63,7 @@ const observer = new IntersectionObserver((entries) => {
 
         if (entry.isIntersecting) {
 
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add("show");
 
         }
 
@@ -77,24 +73,112 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.15
 });
 
-document.querySelectorAll(".card, .car-card").forEach(item => {
+document.querySelectorAll("section, .mobil-card, .promo-card, .item, .card").forEach(el => {
+    observer.observe(el);
+});
 
-    item.style.opacity = "0";
-    item.style.transform = "translateY(30px)";
-    item.style.transition = ".5s ease";
+// =========================================
+// GTM EVENT HELPER
+// =========================================
 
-    observer.observe(item);
+function pushEvent(eventName, data = {}) {
+
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+        event: eventName,
+        ...data
+    });
+
+}
+
+// =========================================
+// CLICK EVENTS
+// =========================================
+
+function trackWhatsApp() {
+
+    pushEvent("click_whatsapp", {
+        location: window.location.pathname
+    });
+
+}
+
+function trackCall() {
+
+    pushEvent("click_call", {
+        location: window.location.pathname
+    });
+
+}
+
+function trackInstagram() {
+
+    pushEvent("click_instagram", {
+        location: window.location.pathname
+    });
+
+}
+
+function trackTikTok() {
+
+    pushEvent("click_tiktok", {
+        location: window.location.pathname
+    });
+
+}
+
+function trackLihatMobil() {
+
+    pushEvent("click_lihat_mobil", {
+        location: window.location.pathname
+    });
+
+}
+
+// =========================================
+// SCROLL DEPTH 90%
+// =========================================
+
+let scrollSent = false;
+
+window.addEventListener("scroll", () => {
+
+    if (scrollSent) return;
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (docHeight <= 0) return;
+
+    const percent = (scrollTop / docHeight) * 100;
+
+    if (percent >= 90) {
+
+        scrollSent = true;
+
+        pushEvent("scroll_90", {
+            percent: 90
+        });
+
+    }
 
 });
 
-// ===============================
-// Tahun Footer Otomatis
-// ===============================
+// =========================================
+// PAGE LOADED
+// =========================================
 
-const year = new Date().getFullYear();
+window.addEventListener("load", () => {
 
-const footer = document.querySelector("footer p:last-child");
+    pushEvent("page_loaded", {
+        page: document.title
+    });
 
-if (footer) {
-    footer.innerHTML = `&copy; ${year} Toyota Promotion. All Rights Reserved.`;
-}
+});
+
+// =========================================
+// COPYRIGHT
+// =========================================
+
+console.log("Ikbal Toyota Website | GTM Ready");
