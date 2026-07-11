@@ -1359,3 +1359,12 @@ padding:30px;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
+.contact .fa-location-dot{
+    color:#EB0A1E;
+    margin-right:6px;
+}
+
+.contact .btn-secondary{
+    margin-top:15px;
+    display:inline-block;
+}
