@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulasi Kredit Toyota | Ikbal Toyota</title>
+<meta name="description" content="Simulasi kredit Toyota Jabodetabek bersama Muhamad Ikbal.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+<a href="index.html" class="logo"><img src="images/logo.png" alt="Toyota"></a>
+<nav class="navbar">
+<a href="index.html">Beranda</a>
+<a href="promo.html">Promo</a>
+<a href="simulasi.html">Simulasi</a>
+<a href="semua-model.html">Model</a>
+<a href="kontak.html">Kontak</a>
+</nav>
+<a href="https://wa.me/6285147851507" class="btn-header">Hubungi Saya</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-content">
+<span class="badge">SIMULASI KREDIT</span>
+<h1>Hitung Estimasi DP & Angsuran Toyota</h1>
+<p>Pilih tipe mobil, masukkan OTR, DP, dan tenor untuk melihat estimasi cicilan.</p>
+</div>
+<div class="hero-image">
+<img src="images/hero.webp" alt="Toyota">
+</div>
+</div>
+</section>
+
+<section class="wa-form">
+<div class="container">
+<div class="section-title">
+<span>SIMULASI</span>
+<h2>Form Simulasi Kredit</h2>
+<p>Hasil simulasi bersifat estimasi. Hubungi Ikbal Toyota untuk penawaran resmi.</p>
+</div>
+
+<form id="simForm">
+<label>Harga OTR (Rp)</label>
+<input type="number" id="otr" value="303000000">
+
+<label>DP (Rp)</label>
+<input type="number" id="dp" value="40000000">
+
+<label>Tenor</label>
+<select id="tenor">
+<option value="12">1 Tahun</option>
+<option value="24">2 Tahun</option>
+<option value="36" selected>3 Tahun</option>
+<option value="48">4 Tahun</option>
+<option value="60">5 Tahun</option>
+</select>
+
+<button type="button" onclick="hitung()">Hitung Simulasi</button>
+</form>
+
+<div class="review-box">
+<h3>Estimasi Angsuran</h3>
+<h2 id="hasil">Rp0 / bulan</h2>
+<p>*Estimasi menggunakan pembagian sederhana, bukan perhitungan leasing resmi.</p>
+
+<a class="btn-primary" id="waBtn" target="_blank"
+href="https://wa.me/6285147851507">
+Minta Penawaran Resmi
+</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<img src="images/logo.png" class="footer-logo" alt="Toyota">
+<h3>Muhamad Ikbal</h3>
+<p>Sales Consultant Setiajaya Toyota Parung</p>
+<p class="copyright">© 2026 Ikbal Toyota</p>
+</div>
+</footer>
+
+<script>
+function hitung(){
+ const otr=Number(document.getElementById('otr').value)||0;
+ const dp=Number(document.getElementById('dp').value)||0;
+ const tenor=Number(document.getElementById('tenor').value)||1;
+ const pinjaman=Math.max(otr-dp,0);
+ const angsuran=Math.round(pinjaman/tenor);
+ const rupiah='Rp'+angsuran.toLocaleString('id-ID')+' / bulan';
+ document.getElementById('hasil').innerText=rupiah;
+ const pesan=encodeURIComponent(
+   `Halo Pak Ikbal, saya ingin simulasi kredit Toyota.
+OTR: Rp${otr.toLocaleString('id-ID')}
+DP: Rp${dp.toLocaleString('id-ID')}
+Tenor: ${tenor} bulan
+Estimasi: ${rupiah}`
+ );
+ document.getElementById('waBtn').href='https://wa.me/6285147851507?text='+pesan;
+}
+hitung();
+</script>
+
+</body>
+</html>
