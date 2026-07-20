@@ -1458,20 +1458,28 @@ box-shadow:0 10px 30px rgba(0,0,0,.08);
 
     </div>
 
-</footer>
+.btn-wa{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:calc(100% - 50px);
+    margin:25px;
+    padding:15px;
+    background:#25D366;
+    color:#fff !important;
+    border-radius:50px;
+    font-weight:700;
+    font-size:16px;
+    box-shadow:0 8px 20px rgba(37,211,102,.25);
+    transition:.3s;
+}
 
-<!-- ================= FLOATING WHATSAPP ================= -->
+.btn-wa:hover{
+    background:#1FAF54;
+    transform:translateY(-3px);
+}
 
-<a href="https://wa.me/6285147851507"
-   class="floating-wa"
-   target="_blank"
-   aria-label="Chat WhatsApp">
-
-    💬
-
-</a>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+.btn-wa i{
+    font-size:22px;
+}
