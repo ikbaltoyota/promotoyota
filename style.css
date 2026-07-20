@@ -1376,3 +1376,102 @@ box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 }
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Belum Menemukan Mobil yang Cocok?</h2>
+
+        <p>
+            Konsultasikan kebutuhan Anda sekarang juga.
+            Saya siap membantu memilih Toyota terbaik
+            sesuai budget dan kebutuhan keluarga maupun bisnis.
+        </p>
+
+        <div class="cta-button">
+
+            <a href="https://wa.me/6285147851507"
+               class="btn-primary"
+               target="_blank">
+
+                Chat WhatsApp
+
+            </a>
+
+            <a href="simulasi.html"
+               class="btn-secondary">
+
+                Simulasi Kredit
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <img src="images/logo.png"
+             class="footer-logo"
+             alt="Toyota">
+
+        <h3>Muhamad Ikbal</h3>
+
+        <p>Sales Consultant Setiajaya Toyota Parung</p>
+
+        <p>
+            Melayani pembelian mobil Toyota
+            Jabodetabek, Bogor, Depok,
+            Tangerang, Bekasi dan sekitarnya.
+        </p>
+
+        <div class="footer-social">
+
+            <a href="https://wa.me/6285147851507" target="_blank">
+                WhatsApp
+            </a>
+
+            <a href="https://instagram.com/ikbaltoyota" target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 Ikbal Toyota.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a href="https://wa.me/6285147851507"
+   class="floating-wa"
+   target="_blank"
+   aria-label="Chat WhatsApp">
+
+    💬
+
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
