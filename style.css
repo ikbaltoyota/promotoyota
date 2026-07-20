@@ -495,7 +495,10 @@ section,
     transform:translateY(0) !important;
 
 }
-
+.mobil-card{
+    opacity:1 !important;
+    transform:none !important;
+}
 /* =========================================
    RESPONSIVE HERO
 ========================================= */
