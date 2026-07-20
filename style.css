@@ -371,17 +371,12 @@ section{
 }
 
 .hero-image img{
-
-    width:100%;
-
-    max-width:560px;
-
+    width:115%;
+    max-width:none;
+    transform:scale(1.2);
     margin:auto;
-
     animation:float 4s ease-in-out infinite;
-
 }
-
 /* =========================================
    FLOATING SOCIAL
 ========================================= */
