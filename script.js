@@ -5,7 +5,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navbar = document.querySelector(".navbar");
 
-if (menuToggle) {
+if (menuToggle && navbar) {
     menuToggle.addEventListener("click", () => {
         navbar.classList.toggle("active");
     });
@@ -17,15 +17,15 @@ if (menuToggle) {
 
 const header = document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 80) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
-
-});
+if (header) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    });
+}
 
 // =========================================
 // SMOOTH SCROLL
@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function(e) {
 
         const target = document.querySelector(this.getAttribute("href"));
 
@@ -45,7 +45,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: "smooth"
             });
 
-            navbar.classList.remove("active");
+            if (navbar) {
+                navbar.classList.remove("active");
+            }
 
         }
 
@@ -57,33 +59,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // SCROLL ANIMATION
 // =========================================
 
-const observer = new IntersectionObserver((entries) => {
+if ("IntersectionObserver" in window) {
 
-    entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
 
-        if (entry.isIntersecting) {
+        entries.forEach(entry => {
 
-            entry.target.classList.add("show");
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
 
-        }
+        });
 
+    }, {
+        threshold: 0.15
     });
 
-}, {
-    threshold: 0.15
-});
+    document.querySelectorAll("section, .mobil-card, .promo-card, .item, .card")
+        .forEach(el => observer.observe(el));
 
-document.querySelectorAll("section, .mobil-card, .promo-card, .item, .card").forEach(el => {
-    observer.observe(el);
-});
+}
 
 // =========================================
-// GTM EVENT HELPER
+// GTM EVENT
 // =========================================
+
+window.dataLayer = window.dataLayer || [];
 
 function pushEvent(eventName, data = {}) {
-
-    window.dataLayer = window.dataLayer || [];
 
     window.dataLayer.push({
         event: eventName,
@@ -93,51 +96,41 @@ function pushEvent(eventName, data = {}) {
 }
 
 // =========================================
-// CLICK EVENTS
+// TRACKING
 // =========================================
 
 function trackWhatsApp() {
-
     pushEvent("click_whatsapp", {
         location: window.location.pathname
     });
-
 }
 
 function trackCall() {
-
     pushEvent("click_call", {
         location: window.location.pathname
     });
-
 }
 
 function trackInstagram() {
-
     pushEvent("click_instagram", {
         location: window.location.pathname
     });
-
 }
 
 function trackTikTok() {
-
     pushEvent("click_tiktok", {
         location: window.location.pathname
     });
-
 }
 
 function trackLihatMobil() {
-
     pushEvent("click_lihat_mobil", {
         location: window.location.pathname
     });
-
 }
 
 // =========================================
-// SCROLL DEPTH 90%
+// SCROLL 90%
 // =========================================
 
 let scrollSent = false;
@@ -146,12 +139,11 @@ window.addEventListener("scroll", () => {
 
     if (scrollSent) return;
 
-    const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
     if (docHeight <= 0) return;
 
-    const percent = (scrollTop / docHeight) * 100;
+    const percent = (window.scrollY / docHeight) * 100;
 
     if (percent >= 90) {
 
@@ -166,7 +158,7 @@ window.addEventListener("scroll", () => {
 });
 
 // =========================================
-// PAGE LOADED
+// PAGE LOAD
 // =========================================
 
 window.addEventListener("load", () => {
@@ -178,24 +170,24 @@ window.addEventListener("load", () => {
 });
 
 // =========================================
-// COPYRIGHT
+// WHATSAPP FORM
 // =========================================
 
-console.log("Ikbal Toyota Website | GTM Ready");
 const waForm = document.getElementById("waForm");
 
 if (waForm) {
 
-    waForm.addEventListener("submit", function(e){
+    waForm.addEventListener("submit", function(e) {
 
         e.preventDefault();
 
-        let nama = document.getElementById("nama").value;
-        let hp = document.getElementById("hp").value;
-        let mobil = document.getElementById("mobil").value;
-        let pesan = document.getElementById("pesan").value;
+        const nama = document.getElementById("nama").value;
+        const hp = document.getElementById("hp").value;
+        const mobil = document.getElementById("mobil").value;
+        const pesan = document.getElementById("pesan").value;
 
-        let text = `Halo Pak Ikbal,
+        const text =
+`Halo Pak Ikbal,
 
 Nama : ${nama}
 
@@ -213,3 +205,5 @@ Pesan : ${pesan}`;
     });
 
 }
+
+console.log("Ikbal Toyota Premium Website Loaded");
