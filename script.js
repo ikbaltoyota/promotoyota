@@ -78,6 +78,8 @@ if ("IntersectionObserver" in window) {
     document.querySelectorAll("section, .promo-card, .item, .card")
     .forEach(el => observer.observe(el));
 
+}
+
 // =========================================
 // GTM EVENT
 // =========================================
