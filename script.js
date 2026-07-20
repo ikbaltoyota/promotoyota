@@ -182,20 +182,20 @@ window.addEventListener("load", () => {
 // =========================================
 
 console.log("Ikbal Toyota Website | GTM Ready");
-document.getElementById("waForm").addEventListener("submit", function(e){
+const waForm = document.getElementById("waForm");
 
-e.preventDefault();
+if (waForm) {
 
-let nama=document.getElementById("nama").value;
+    waForm.addEventListener("submit", function(e){
 
-let hp=document.getElementById("hp").value;
+        e.preventDefault();
 
-let mobil=document.getElementById("mobil").value;
+        let nama = document.getElementById("nama").value;
+        let hp = document.getElementById("hp").value;
+        let mobil = document.getElementById("mobil").value;
+        let pesan = document.getElementById("pesan").value;
 
-let pesan=document.getElementById("pesan").value;
-
-let text=
-`Halo Pak Ikbal,
+        let text = `Halo Pak Ikbal,
 
 Nama : ${nama}
 
@@ -205,9 +205,11 @@ Mobil : ${mobil}
 
 Pesan : ${pesan}`;
 
-window.open(
-"https://wa.me/6285147851507?text="+encodeURIComponent(text),
-"_blank"
-);
+        window.open(
+            "https://wa.me/6285147851507?text=" + encodeURIComponent(text),
+            "_blank"
+        );
 
-});
+    });
+
+}
