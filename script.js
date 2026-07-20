@@ -75,10 +75,8 @@ if ("IntersectionObserver" in window) {
         threshold: 0.15
     });
 
-    document.querySelectorAll("section, .mobil-card, .promo-card, .item, .card")
-        .forEach(el => observer.observe(el));
-
-}
+    document.querySelectorAll("section, .promo-card, .item, .card")
+    .forEach(el => observer.observe(el));
 
 // =========================================
 // GTM EVENT
