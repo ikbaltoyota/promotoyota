@@ -258,14 +258,8 @@ section{
 ========================================= */
 
 .hero{
-
-    padding-top:140px;
-    padding-bottom:90px;
-
-    background:linear-gradient(135deg,#ffffff 0%,#f7f8fc 100%);
-
+    padding:110px 0 40px;
 }
-
 .hero-grid{
 
     display:grid;
@@ -365,17 +359,15 @@ section{
 }
 
 .hero-image{
-
-    text-align:center;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .hero-image img{
-    width:115%;
-    max-width:none;
-    transform:scale(1.2);
-    margin:auto;
-    animation:float 4s ease-in-out infinite;
+    width:100%;
+    max-width:600px;
+    height:auto;
 }
 /* =========================================
    FLOATING SOCIAL
