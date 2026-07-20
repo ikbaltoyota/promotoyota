@@ -1184,62 +1184,91 @@ padding:20px;
 }
 
 /* =========================================
-   TESTIMONI
+   TESTIMONI PREMIUM
 ========================================= */
 
 .testimoni{
-
-    background:#f7f8fc;
-
+    padding:100px 0;
+    background:#f8f9fc;
 }
 
 .testimoni-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
     gap:30px;
-
+    margin-top:50px;
 }
 
-.card{
-
+.testimoni-card{
     background:#fff;
-
-    border-radius:20px;
-
-    padding:35px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    transition:.3s;
-
+    padding:40px 30px;
+    border-radius:24px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    border:1px solid #eee;
 }
 
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-
+.testimoni-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 55px rgba(0,0,0,.15);
 }
 
-.card h3{
+.avatar{
+    width:90px;
+    height:90px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#e60012,#ff4d4d);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
+.avatar i{
+    color:#fff;
+    font-size:36px;
+}
+
+.rating{
     color:#FFD700;
-
-    font-size:28px;
-
+    font-size:24px;
     margin-bottom:15px;
-
+    letter-spacing:3px;
 }
 
-.card p{
-
+.testimoni-card p{
     color:#666;
-
+    line-height:1.8;
+    font-style:italic;
     margin-bottom:20px;
+}
+
+.testimoni-card h3{
+    color:#222;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.testimoni-card span{
+    color:#e60012;
+    font-weight:600;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+
+.testimoni{
+    padding:70px 0;
+}
+
+.testimoni-grid{
+    grid-template-columns:1fr;
+}
+
+.testimoni-card{
+    padding:30px 20px;
+}
 
 }
 
