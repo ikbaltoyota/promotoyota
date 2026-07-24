@@ -257,10 +257,13 @@ section{
    HERO
 ========================================= */
 .hero{
-    position:relative;
-    padding:180px 0 120px;
-    background:linear-gradient(135deg,#ffffff,#f8f9fc);
-    overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url(images/hero-bg.webp) center/cover;
+    color:#fff;
 }
 .hero-content h1{
     color:#222;
