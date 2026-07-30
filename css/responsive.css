@@ -1,351 +1,3 @@
-/*==============================
-WHY US
-===============================*/
-
-.why-us{
-    background:#f8f9fb;
-}
-
-.why-counter{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    margin-bottom:60px;
-}
-
-.counter-box{
-    background:#fff;
-    border-radius:18px;
-    padding:35px;
-    text-align:center;
-    box-shadow:var(--shadow);
-}
-
-.counter-box h3{
-    color:var(--primary);
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.counter-box p{
-    color:#666;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.why-card{
-    background:#fff;
-    border-radius:18px;
-    padding:35px;
-    text-align:center;
-    transition:.35s;
-    box-shadow:var(--shadow);
-}
-
-.why-card:hover{
-    transform:translateY(-10px);
-}
-
-.why-icon{
-    width:80px;
-    height:80px;
-    margin:auto;
-    border-radius:50%;
-    background:#ffe8eb;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:25px;
-}
-
-.why-icon i{
-    color:var(--primary);
-    font-size:34px;
-}
-
-.why-card h3{
-    margin-bottom:15px;
-}
-
-.why-card p{
-    color:#666;
-}
-
-.why-cta{
-    margin-top:70px;
-    background:linear-gradient(135deg,#EB0A1E,#b70018);
-    color:#fff;
-    padding:60px 30px;
-    text-align:center;
-    border-radius:22px;
-}
-
-.why-cta h3{
-    font-size:34px;
-    margin-bottom:15px;
-}
-
-.why-cta p{
-    max-width:700px;
-    margin:auto auto 30px;
-}
-
-/*==============================
-TESTIMONI
-===============================*/
-
-.testimoni{
-    background:#fff;
-}
-
-.testimoni-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.testimoni-card{
-    background:#fff;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-    padding:35px;
-    text-align:center;
-}
-
-.avatar{
-    width:75px;
-    height:75px;
-    margin:auto;
-    border-radius:50%;
-    background:#f2f2f2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:20px;
-}
-
-.avatar i{
-    font-size:32px;
-    color:var(--primary);
-}
-
-.rating{
-    color:#FFD700;
-    font-size:24px;
-    margin-bottom:15px;
-}
-
-.testimoni-card p{
-    color:#666;
-    margin-bottom:20px;
-}
-
-.testimoni-card h3{
-    color:#222;
-}
-
-.testimoni-card span{
-    font-size:14px;
-    color:#888;
-}
-
-/*==============================
-FAQ
-===============================*/
-
-.faq{
-    background:#f9f9f9;
-}
-
-.faq-item{
-    background:#fff;
-    padding:25px;
-    border-radius:16px;
-    margin-bottom:20px;
-    box-shadow:var(--shadow);
-}
-
-.faq-item h3{
-    color:var(--primary);
-    margin-bottom:12px;
-}
-
-.faq-item p{
-    color:#666;
-}
-
-/*==============================
-FORM WA
-===============================*/
-
-.wa-form{
-    background:#fff;
-}
-
-#waForm{
-    max-width:700px;
-    margin:auto;
-}
-
-#waForm input,
-#waForm select,
-#waForm textarea{
-    width:100%;
-    padding:16px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    margin-bottom:18px;
-    font-family:inherit;
-    font-size:15px;
-}
-
-#waForm textarea{
-    height:140px;
-    resize:none;
-}
-
-#waForm input:focus,
-#waForm select:focus,
-#waForm textarea:focus{
-    outline:none;
-    border-color:var(--primary);
-}
-
-#waForm button{
-    width:100%;
-    border:none;
-    background:var(--primary);
-    color:#fff;
-    padding:18px;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:17px;
-    font-weight:600;
-    transition:.3s;
-}
-
-#waForm button:hover{
-    background:#c30019;
-}
-
-/*==============================
-CONTACT
-===============================*/
-
-.contact{
-    background:#f8f8f8;
-}
-
-.foto-sales{
-    width:180px;
-    border-radius:50%;
-    margin:25px auto;
-    border:6px solid #fff;
-    box-shadow:var(--shadow);
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-    margin-top:50px;
-}
-
-.contact-card{
-    background:#fff;
-    text-align:center;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-    transition:.35s;
-}
-
-.contact-card:hover{
-    transform:translateY(-10px);
-}
-
-.contact-card i{
-    font-size:42px;
-    color:var(--primary);
-    margin-bottom:18px;
-}
-
-.contact-card h3{
-    margin-bottom:12px;
-}
-
-.contact-card p{
-    color:#666;
-    margin-bottom:18px;
-}
-
-.contact-card a{
-    color:var(--primary);
-    font-weight:600;
-}
-
-/*==============================
-FOOTER
-===============================*/
-
-.footer{
-    background:#111;
-    color:#ddd;
-    text-align:center;
-    padding:70px 20px 30px;
-}
-
-.footer-logo{
-    width:170px;
-    margin:auto auto 25px;
-}
-
-.footer h3{
-    color:#fff;
-    margin-bottom:10px;
-}
-
-.footer p{
-    color:#bbb;
-}
-
-.footer-social{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin:30px 0;
-}
-
-.footer-social a{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#222;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:20px;
-}
-
-.footer-social a:hover{
-    background:var(--primary);
-}
-
-.copyright{
-    margin-top:30px;
-    font-size:14px;
-    color:#888;
-}
-
-/*==============================
-RESPONSIVE
-===============================*/
-
 @media(max-width:992px){
 
 .hero-container,
@@ -415,6 +67,68 @@ section{
 .floating-social a{
     width:52px;
     height:52px;
+}
+
+}
+@media (max-width:576px){
+
+.container{
+    width:94%;
+}
+
+.section-title h2{
+    font-size:26px;
+}
+
+.hero h1{
+    font-size:30px;
+    line-height:1.3;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-buttons a{
+    width:100%;
+    justify-content:center;
+}
+
+.hero-feature{
+    gap:15px;
+}
+
+.hero-feature div{
+    padding:18px;
+}
+
+.mobil-grid,
+.why-grid,
+.testimoni-grid,
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.promo-right{
+    grid-template-columns:1fr;
+}
+
+.btn-header{
+    display:none;
+}
+
+.logo img{
+    width:140px;
+}
+
+.header .container{
+    height:72px;
+}
+
+.floating-social a{
+    width:48px;
+    height:48px;
+    font-size:20px;
 }
 
 }
