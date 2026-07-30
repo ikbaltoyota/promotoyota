@@ -2946,3 +2946,66 @@ END STYLE.CSS
     max-width:650px;
     animation:float 4s ease infinite;
 }
+/* ==========================
+   HERO FULL SCREEN
+========================== */
+
+.hero{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("../images/hero-bg.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-container{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-content{
+    max-width:650px;
+    color:#fff;
+    z-index:2;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:8px 18px;
+    background:#EB0A1E;
+    color:#fff;
+    border-radius:30px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    opacity:.95;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
