@@ -1,460 +1,216 @@
-/* ==========================================================
-   TOYOTA PAMULANG PREMIUM V6
-   ANIMATION.CSS
-==========================================================*/
-
-/* ==========================================
-   DEFAULT
-========================================== */
-
-.fade-up,
-.fade-down,
-.fade-left,
-.fade-right,
-.zoom-in,
-.zoom-out{
-
-    opacity:0;
-
-    transition:all .8s ease;
-
-    will-change:transform,opacity;
-
-}
-
-/* ==========================================
-   FADE UP
-========================================== */
-
-.fade-up{
-
-    transform:translateY(60px);
-
-}
-
-.fade-up.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-/* ==========================================
-   FADE DOWN
-========================================== */
-
-.fade-down{
-
-    transform:translateY(-60px);
-
-}
-
-.fade-down.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-/* ==========================================
-   FADE LEFT
-========================================== */
-
-.fade-left{
-
-    transform:translateX(-60px);
-
-}
-
-.fade-left.show{
-
-    opacity:1;
-
-    transform:translateX(0);
-
-}
-
-/* ==========================================
-   FADE RIGHT
-========================================== */
-
-.fade-right{
-
-    transform:translateX(60px);
-
-}
-
-.fade-right.show{
-
-    opacity:1;
-
-    transform:translateX(0);
-
-}
-
-/* ==========================================
-   ZOOM IN
-========================================== */
-
-.zoom-in{
-
-    transform:scale(.85);
-
-}
-
-.zoom-in.show{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-
-/* ==========================================
-   ZOOM OUT
-========================================== */
-
-.zoom-out{
-
-    transform:scale(1.15);
-
-}
-
-.zoom-out.show{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-
-/* ==========================================
-   DELAY
-========================================== */
-
-.delay-1{
-
-    transition-delay:.15s;
-
-}
-
-.delay-2{
-
-    transition-delay:.30s;
-
-}
-
-.delay-3{
-
-    transition-delay:.45s;
-
-}
-
-.delay-4{
-
-    transition-delay:.60s;
-
-}
-
-.delay-5{
-
-    transition-delay:.75s;
-
-}
-
-/* ==========================================
-   FLOAT
-========================================== */
-
-.float{
-
-    animation:float 3s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-10px);
-
-    }
-
-}
-
-/* ==========================================
-   PULSE
-========================================== */
-
-.pulse{
-
-    animation:pulse 2s infinite;
-
-}
-
-@keyframes pulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.05);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* ==========================================
-   BOUNCE
-========================================== */
-
-.bounce{
-
-    animation:bounce 2s infinite;
-
-}
-
-@keyframes bounce{
-
-    0%,20%,50%,80%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    40%{
-
-        transform:translateY(-10px);
-
-    }
-
-    60%{
-
-        transform:translateY(-5px);
-
-    }
-
-}
-
-/* ==========================================
-   ROTATE
-========================================== */
-
-.rotate{
-
-    animation:rotate 15s linear infinite;
-
-}
-
-@keyframes rotate{
-
+/*==================================
+KEYFRAMES
+==================================*/
+
+@keyframes fadeUp{
     from{
-
-        transform:rotate(0deg);
-
+        opacity:0;
+        transform:translateY(50px);
     }
-
     to{
-
-        transform:rotate(360deg);
-
+        opacity:1;
+        transform:translateY(0);
     }
-
 }
 
-/* ==========================================
-   SHAKE
-========================================== */
-
-.shake:hover{
-
-    animation:shake .5s;
-
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
 }
 
-@keyframes shake{
-
-    0%{transform:translateX(0);}
-
-    20%{transform:translateX(-4px);}
-
-    40%{transform:translateX(4px);}
-
-    60%{transform:translateX(-4px);}
-
-    80%{transform:translateX(4px);}
-
-    100%{transform:translateX(0);}
-
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
 }
 
-/* ==========================================
-   BUTTON HOVER
-========================================== */
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes floatImage{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/*==================================
+AUTO ANIMATION
+==================================*/
+
+.hero-content{
+    animation:fadeLeft 1s ease;
+}
+
+.hero-image{
+    animation:fadeRight 1s ease;
+}
+
+.hero-image img{
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+.section-title,
+.promo-banner,
+.mobil-card,
+.why-card,
+.counter-box,
+.testimoni-card,
+.contact-card,
+.faq-item{
+    animation:fadeUp .8s ease both;
+}
+
+/*==================================
+CARD EFFECT
+==================================*/
+
+.mobil-card,
+.why-card,
+.contact-card,
+.testimoni-card,
+.promo-item{
+    position:relative;
+    overflow:hidden;
+}
+
+.mobil-card::before,
+.why-card::before,
+.contact-card::before,
+.testimoni-card::before,
+.promo-item::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:220%;
+    height:220%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:rotate(25deg);
+    transition:.8s;
+}
+
+.mobil-card:hover::before,
+.why-card:hover::before,
+.contact-card:hover::before,
+.testimoni-card:hover::before,
+.promo-item:hover::before{
+    top:100%;
+    left:100%;
+}
+
+/*==================================
+IMAGE EFFECT
+==================================*/
+
+.mobil-card img,
+.hero-image img{
+    transition:.45s;
+}
+
+.mobil-card:hover img{
+    transform:scale(1.08);
+}
+
+/*==================================
+BUTTON EFFECT
+==================================*/
 
 .btn-primary,
-.btn-secondary{
-
-    transition:all .35s ease;
-
+.btn-secondary,
+.btn-wa,
+.btn-header,
+.promo-btn{
+    position:relative;
+    overflow:hidden;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover{
-
-    transform:translateY(-4px);
-
+.btn-primary::after,
+.btn-secondary::after,
+.btn-wa::after,
+.btn-header::after,
+.promo-btn::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    background:rgba(255,255,255,.3);
+    border-radius:50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    transition:.55s;
 }
 
-/* ==========================================
-   CARD HOVER
-========================================== */
-
-.service-card,
-.why-card,
-.car-card,
-.team-card,
-.counter-box,
-.process-card,
-.vision-card,
-.testimonial-card{
-
-    transition:all .35s ease;
-
+.btn-primary:hover::after,
+.btn-secondary:hover::after,
+.btn-wa:hover::after,
+.btn-header:hover::after,
+.promo-btn:hover::after{
+    width:320px;
+    height:320px;
 }
 
-.service-card:hover,
-.why-card:hover,
-.car-card:hover,
-.team-card:hover,
-.counter-box:hover,
-.process-card:hover,
-.vision-card:hover,
-.testimonial-card:hover{
+/*==================================
+HEADER SCROLL
+==================================*/
 
-    transform:translateY(-10px);
-
+.header.scrolled{
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-/* ==========================================
-   IMAGE ZOOM
-========================================== */
+/*==================================
+SCROLLBAR
+==================================*/
 
-.hero-image img,
-.about-image img,
-.team-image img,
-.car-image img{
-
-    transition:transform .5s ease;
-
+::-webkit-scrollbar{
+    width:10px;
 }
 
-.hero-image:hover img,
-.about-image:hover img,
-.team-image:hover img,
-.car-image:hover img{
-
-    transform:scale(1.05);
-
+::-webkit-scrollbar-thumb{
+    background:#EB0A1E;
+    border-radius:20px;
 }
 
-/* ==========================================
-   WHATSAPP
-========================================== */
-
-.floating-whatsapp{
-
-    animation:waFloat 2s infinite;
-
+::-webkit-scrollbar-track{
+    background:#f5f5f5;
 }
 
-@keyframes waFloat{
+/*==================================
+TEXT SELECTION
+==================================*/
 
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-8px);
-
-    }
-
+::selection{
+    background:#EB0A1E;
+    color:#fff;
 }
-
-/* ==========================================
-   BACK TO TOP
-========================================== */
-
-#backToTop{
-
-    transition:all .3s ease;
-
-}
-
-#backToTop:hover{
-
-    transform:translateY(-5px);
-
-}
-
-/* ==========================================
-   PRELOADER
-========================================== */
-
-#preloader{
-
-    transition:opacity .5s ease,
-               visibility .5s ease;
-
-}
-
-#preloader.hide{
-
-    opacity:0;
-
-    visibility:hidden;
-
-}
-
-/* ==========================================
-   REDUCED MOTION
-========================================== */
-
-@media (prefers-reduced-motion: reduce){
-
-*{
-
-    animation:none !important;
-
-    transition:none !important;
-
-    scroll-behavior:auto !important;
-
-}
-
-}
-
-/* ==========================================
-   END OF FILE
-========================================== */
