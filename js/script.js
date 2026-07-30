@@ -311,3 +311,13 @@ window.addEventListener("scroll",()=>{
     progress.style.width=current+"%";
 
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const navbar = document.querySelector(".navbar");
+
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+window.addEventListener("scroll", () => {
+    document.querySelector(".header").classList.toggle("scrolled", window.scrollY > 50);
+});
