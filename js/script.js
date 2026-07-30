@@ -1,188 +1,101 @@
-/* ==========================================================
-   TOYOTA PAMULANG PREMIUM V6
-   SCRIPT.JS
-========================================================== */
+/*=========================================
+TOYOTA LANDING PAGE SCRIPT
+=========================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================================
-       PRELOADER
-    ========================================== */
-
-    const preloader = document.getElementById("preloader");
-
-    window.addEventListener("load", () => {
-        if (preloader) {
-            preloader.classList.add("hide");
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 500);
-        }
-    });
-
-    /* ==========================================
-       MOBILE MENU
-    ========================================== */
+    /*=====================================
+    MOBILE MENU
+    =====================================*/
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
 
-    if (menuToggle && navbar) {
+    if(menuToggle){
 
-        menuToggle.addEventListener("click", () => {
+        menuToggle.addEventListener("click",()=>{
 
             navbar.classList.toggle("active");
+
             menuToggle.classList.toggle("active");
 
         });
 
-        document.querySelectorAll(".navbar a").forEach(link => {
+    }
 
-            link.addEventListener("click", () => {
+    document.querySelectorAll(".navbar a").forEach(link=>{
 
-                navbar.classList.remove("active");
-                menuToggle.classList.remove("active");
+        link.addEventListener("click",()=>{
 
-            });
+            navbar.classList.remove("active");
 
         });
 
-    }
+    });
 
-    /* ==========================================
-       HEADER SCROLL
-    ========================================== */
+    /*=====================================
+    STICKY HEADER
+    =====================================*/
 
     const header = document.querySelector(".header");
 
-    function headerScroll() {
+    window.addEventListener("scroll",()=>{
 
-        if (!header) return;
+        if(window.scrollY > 80){
 
-        if (window.scrollY > 80) {
+            header.classList.add("scrolled");
 
-            header.style.boxShadow = "0 10px 25px rgba(0,0,0,.08)";
-            header.style.background = "rgba(255,255,255,.97)";
+        }else{
 
-        } else {
-
-            header.style.boxShadow = "none";
-            header.style.background = "rgba(255,255,255,.96)";
-
-        }
-
-    }
-
-    window.addEventListener("scroll", headerScroll);
-
-    /* ==========================================
-       BACK TO TOP
-    ========================================== */
-
-    const backTop = document.getElementById("backToTop");
-
-    function backTopShow() {
-
-        if (!backTop) return;
-
-        if (window.scrollY > 400) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
-
-        }
-
-    }
-
-    window.addEventListener("scroll", backTopShow);
-
-    if (backTop) {
-
-        backTop.addEventListener("click", () => {
-
-            window.scrollTo({
-
-                top:0,
-
-                behavior:"smooth"
-
-            });
-
-        });
-
-    }
-
-    /* ==========================================
-       FAQ
-    ========================================== */
-
-    document.querySelectorAll(".faq-item").forEach(item=>{
-
-        const question=item.querySelector(".faq-question");
-        const answer=item.querySelector(".faq-answer");
-
-        if(question){
-
-            question.addEventListener("click",()=>{
-
-                const active=item.classList.contains("active");
-
-                document.querySelectorAll(".faq-item").forEach(i=>{
-
-                    i.classList.remove("active");
-
-                    const a=i.querySelector(".faq-answer");
-
-                    if(a){
-
-                        a.style.maxHeight=null;
-
-                    }
-
-                });
-
-                if(!active){
-
-                    item.classList.add("active");
-
-                    if(answer){
-
-                        answer.style.maxHeight=answer.scrollHeight+"px";
-
-                    }
-
-                }
-
-            });
+            header.classList.remove("scrolled");
 
         }
 
     });
 
-    /* ==========================================
-       SCROLL REVEAL
-    ========================================== */
+    /*=====================================
+    SMOOTH SCROLL
+    =====================================*/
 
-    const reveals=document.querySelectorAll(
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-        ".fade-up,.fade-left,.fade-right,.fade-down,.zoom-in,.zoom-out"
+        anchor.addEventListener("click",function(e){
 
-    );
+            e.preventDefault();
 
-    function revealScroll(){
+            const target=document.querySelector(this.getAttribute("href"));
 
-        const trigger=window.innerHeight-120;
+            if(target){
 
-        reveals.forEach(el=>{
+                target.scrollIntoView({
 
-            const top=el.getBoundingClientRect().top;
+                    behavior:"smooth"
 
-            if(top<trigger){
+                });
 
-                el.classList.add("show");
+            }
+
+        });
+
+    });
+
+    /*=====================================
+    SCROLL REVEAL
+    =====================================*/
+
+    const reveals=document.querySelectorAll(".reveal");
+
+    function reveal(){
+
+        reveals.forEach(item=>{
+
+            const top=item.getBoundingClientRect().top;
+
+            const visible=120;
+
+            if(top < window.innerHeight-visible){
+
+                item.classList.add("active");
 
             }
 
@@ -190,152 +103,131 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    revealScroll();
+    window.addEventListener("scroll",reveal);
 
-    window.addEventListener("scroll",revealScroll);
+    reveal();
 
-    /* ==========================================
-       COUNTER
-    ========================================== */
+    /*=====================================
+    FAQ
+    =====================================*/
 
-    const counters=document.querySelectorAll(".counter-box h2");
+    document.querySelectorAll(".faq-item h3").forEach(item=>{
 
-    let counted=false;
+        item.addEventListener("click",()=>{
 
-    function counterAnimation(){
+            const parent=item.parentElement;
 
-        const section=document.querySelector(".counter");
-
-        if(!section) return;
-
-        const top=section.getBoundingClientRect().top;
-
-        if(top<window.innerHeight-120 && !counted){
-
-            counted=true;
-
-            counters.forEach(counter=>{
-
-                const target=parseInt(counter.textContent);
-
-                if(isNaN(target)) return;
-
-                let value=0;
-
-                const speed=Math.max(10,Math.floor(target/40));
-
-                const update=()=>{
-
-                    value+=speed;
-
-                    if(value>=target){
-
-                        value=target;
-
-                    }
-
-                    counter.textContent=value+"+";
-
-                    if(value<target){
-
-                        requestAnimationFrame(update);
-
-                    }
-
-                };
-
-                update();
-
-            });
-
-        }
-
-    }
-
-    window.addEventListener("scroll",counterAnimation);
-
-    counterAnimation();
-
-    /* ==========================================
-       RIPPLE BUTTON
-    ========================================== */
-
-    document.querySelectorAll(".btn-primary,.btn-secondary").forEach(btn=>{
-
-        btn.addEventListener("click",function(e){
-
-            const circle=document.createElement("span");
-
-            circle.classList.add("ripple");
-
-            const rect=this.getBoundingClientRect();
-
-            const size=Math.max(rect.width,rect.height);
-
-            circle.style.width=size+"px";
-            circle.style.height=size+"px";
-
-            circle.style.left=(e.clientX-rect.left-size/2)+"px";
-            circle.style.top=(e.clientY-rect.top-size/2)+"px";
-
-            this.appendChild(circle);
-
-            setTimeout(()=>{
-
-                circle.remove();
-
-            },600);
+            parent.classList.toggle("open");
 
         });
 
     });
 
-});
+    /*=====================================
+    COUNTER
+    =====================================*/
 
-/* ==========================================
-   SCROLL PROGRESS BAR
-========================================== */
+    const counters=document.querySelectorAll(".counter-box h3");
 
-const progress=document.createElement("div");
+    counters.forEach(counter=>{
 
-progress.id="scroll-progress";
+        const text=counter.innerText;
 
-document.body.appendChild(progress);
+        const target=parseInt(text.replace(/\D/g,""));
 
-window.addEventListener("scroll",()=>{
+        if(isNaN(target)) return;
 
-    const total=document.documentElement.scrollHeight-window.innerHeight;
+        let count=0;
 
-    const current=(window.scrollY/total)*100;
+        const speed=target/80;
 
-    progress.style.width=current+"%";
+        function update(){
 
-});
-const menuToggle = document.querySelector(".menu-toggle");
-const navbar = document.querySelector(".navbar");
+            count+=speed;
 
-menuToggle.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
-document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", () => {
-        navbar.classList.remove("active");
-    });
-});
-const reveals = document.querySelectorAll(".reveal");
+            if(count<target){
 
-window.addEventListener("scroll", () => {
+                counter.innerText=Math.floor(count)+"+";
 
-    reveals.forEach((item) => {
+                requestAnimationFrame(update);
 
-        const windowHeight = window.innerHeight;
-        const elementTop = item.getBoundingClientRect().top;
-        const visible = 120;
+            }else{
 
-        if (elementTop < windowHeight - visible) {
-            item.classList.add("active");
+                counter.innerText=text;
+
+            }
+
         }
 
+        update();
+
     });
 
+    /*=====================================
+    FORM WHATSAPP
+    =====================================*/
+
+    const form=document.getElementById("waForm");
+
+    if(form){
+
+        form.addEventListener("submit",(e)=>{
+
+            e.preventDefault();
+
+            const nama=document.getElementById("nama").value;
+            const hp=document.getElementById("hp").value;
+            const mobil=document.getElementById("mobil").value;
+            const pesan=document.getElementById("pesan").value;
+
+            const text=
+`Halo Pak Ikbal,
+
+Nama : ${nama}
+No HP : ${hp}
+Mobil : ${mobil}
+
+Pesan :
+${pesan}`;
+
+            window.open(
+
+"https://wa.me/6285147851507?text="+encodeURIComponent(text),
+
+"_blank"
+
+            );
+
+        });
+
+    }
+
 });
+
+/*=====================================
+TRACKING
+=====================================*/
+
+function trackWhatsApp(){
+
+    console.log("WhatsApp Click");
+
+}
+
+function trackCall(){
+
+    console.log("Call Click");
+
+}
+
+function trackInstagram(){
+
+    console.log("Instagram Click");
+
+}
+
+function trackTikTok(){
+
+    console.log("TikTok Click");
+
+}
