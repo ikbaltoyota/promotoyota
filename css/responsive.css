@@ -631,3 +631,32 @@ max-width:100%;
 }
 
 }
+@media(max-width:768px){
+
+.hero{
+    min-height:100vh;
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.hero-container{
+    flex-direction:column;
+}
+
+.hero-content{
+    max-width:100%;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+}
