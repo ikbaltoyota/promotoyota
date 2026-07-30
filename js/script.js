@@ -317,7 +317,25 @@ const navbar = document.querySelector(".navbar");
 menuToggle.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
+document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        navbar.classList.remove("active");
+    });
+});
+const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-    document.querySelector(".header").classList.toggle("scrolled", window.scrollY > 50);
+
+    reveals.forEach((item) => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = item.getBoundingClientRect().top;
+        const visible = 120;
+
+        if (elementTop < windowHeight - visible) {
+            item.classList.add("active");
+        }
+
+    });
+
 });
