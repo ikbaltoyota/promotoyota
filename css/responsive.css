@@ -1,4 +1,73 @@
-@media(max-width:992px){
+/*=====================================
+RESPONSIVE CSS
+Author : Ikbal Toyota
+======================================*/
+
+/* ==============================
+Laptop
+================================= */
+
+@media (max-width:1200px){
+
+.container{
+    width:95%;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+}
+
+/* ==============================
+Tablet
+================================= */
+
+@media (max-width:992px){
+
+section{
+    padding:80px 0;
+}
+
+.header .container{
+    height:75px;
+}
+
+.logo img{
+    width:150px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.btn-header{
+    display:none;
+}
+
+/* Mobile Menu */
+
+.navbar{
+    position:fixed;
+    top:75px;
+    left:-100%;
+    width:100%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.navbar.active{
+    left:0;
+}
 
 .hero-container,
 .promo-banner{
@@ -7,32 +76,48 @@
 
 .hero{
     text-align:center;
+    padding-top:130px;
 }
 
-.hero-buttons,
-.hero-feature{
+.hero h1{
+    font-size:42px;
+}
+
+.hero-buttons{
     justify-content:center;
 }
 
-.navbar{
-    display:none;
+.hero-feature{
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-.menu-toggle{
-    display:block;
+.hero-image{
+    margin-top:40px;
 }
 
 .section-title h2{
     font-size:34px;
 }
 
-.hero h1{
-    font-size:44px;
+.promo-right{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.mobil-grid,
+.why-grid,
+.testimoni-grid,
+.contact-grid{
+    grid-template-columns:repeat(2,1fr);
 }
 
 }
 
-@media(max-width:768px){
+/* ==============================
+Mobile
+================================= */
+
+@media (max-width:768px){
 
 section{
     padding:70px 0;
@@ -43,46 +128,12 @@ section{
 }
 
 .hero h1{
-    font-size:36px;
-}
-
-.hero-feature{
-    flex-direction:column;
-}
-
-.cta h2,
-.why-cta h3{
-    font-size:30px;
-}
-
-.section-title h2{
-    font-size:30px;
-}
-
-.floating-social{
-    right:15px;
-    bottom:15px;
-}
-
-.floating-social a{
-    width:52px;
-    height:52px;
-}
-
-}
-@media (max-width:576px){
-
-.container{
-    width:94%;
-}
-
-.section-title h2{
-    font-size:26px;
-}
-
-.hero h1{
-    font-size:30px;
+    font-size:34px;
     line-height:1.3;
+}
+
+.hero p{
+    font-size:15px;
 }
 
 .hero-buttons{
@@ -95,11 +146,28 @@ section{
 }
 
 .hero-feature{
-    gap:15px;
+    flex-direction:column;
+    gap:18px;
 }
 
-.hero-feature div{
-    padding:18px;
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title p{
+    font-size:15px;
+}
+
+.promo-banner{
+    padding:30px;
+}
+
+.promo-left h3{
+    font-size:28px;
+}
+
+.promo-right{
+    grid-template-columns:1fr;
 }
 
 .mobil-grid,
@@ -109,26 +177,148 @@ section{
     grid-template-columns:1fr;
 }
 
-.promo-right{
-    grid-template-columns:1fr;
+.cta h2{
+    font-size:30px;
 }
 
-.btn-header{
-    display:none;
+.why-cta h3{
+    font-size:28px;
 }
 
-.logo img{
-    width:140px;
+.counter-box h3{
+    font-size:34px;
 }
 
-.header .container{
-    height:72px;
+.floating-social{
+    right:15px;
+    bottom:20px;
 }
 
 .floating-social a{
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
+    font-size:22px;
+}
+
+}
+
+/* ==============================
+Small Mobile
+================================= */
+
+@media (max-width:576px){
+
+.container{
+    width:94%;
+}
+
+.header .container{
+    height:70px;
+}
+
+.logo img{
+    width:135px;
+}
+
+.navbar{
+    top:70px;
+}
+
+.hero{
+    padding-top:110px;
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+.hero-tag{
+    font-size:12px;
+}
+
+.hero-feature h3{
+    font-size:24px;
+}
+
+.section-title h2{
+    font-size:26px;
+}
+
+.section-title span{
+    font-size:13px;
+}
+
+.promo-banner{
+    padding:25px;
+}
+
+.mobil-card img{
+    height:200px;
+}
+
+.mobil-card h3{
+    font-size:22px;
+}
+
+.harga{
     font-size:20px;
+}
+
+.foto-sales{
+    width:150px;
+}
+
+.contact-card,
+.testimoni-card,
+.why-card,
+.counter-box{
+    padding:25px;
+}
+
+.footer{
+    padding:60px 20px 30px;
+}
+
+.footer-logo{
+    width:150px;
+}
+
+.footer-social a{
+    width:45px;
+    height:45px;
+}
+
+}
+
+/* ==============================
+Extra Small Device
+================================= */
+
+@media (max-width:360px){
+
+.hero h1{
+    font-size:24px;
+}
+
+.section-title h2{
+    font-size:22px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-wa,
+.btn-header,
+.promo-btn{
+    font-size:14px;
+    padding:14px 20px;
+}
+
+.hero-feature div{
+    padding:16px;
+}
+
+.mobil-card{
+    border-radius:15px;
 }
 
 }
