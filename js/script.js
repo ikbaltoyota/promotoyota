@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const nama=document.getElementById("nama").value;
             const hp=document.getElementById("hp").value;
-            const mobil=document.getElementById("mobil").value;
+            const mobil=document.getElementById("pilihanmobil").value;
             const pesan=document.getElementById("pesan").value;
 
             const text=
