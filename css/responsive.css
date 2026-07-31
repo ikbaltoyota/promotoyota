@@ -717,3 +717,30 @@ max-width:420px;
 }
 
 }
+@media(max-width:992px){
+
+.nav-menu{
+
+display:none;
+
+}
+
+.btn-header{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+.logo img{
+
+height:42px;
+
+}
+
+}
