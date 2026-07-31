@@ -238,3 +238,30 @@ const header=document.querySelector(".header");
 header.classList.toggle("scrolled",window.scrollY>40);
 
 });
+const menuToggle=document.querySelector(".menu-toggle");
+
+const mobileNav=document.querySelector(".mobile-nav");
+
+const mobileClose=document.querySelector(".mobile-close");
+
+menuToggle.addEventListener("click",()=>{
+
+mobileNav.classList.add("active");
+
+});
+
+mobileClose.addEventListener("click",()=>{
+
+mobileNav.classList.remove("active");
+
+});
+
+document.querySelectorAll(".mobile-nav a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+mobileNav.classList.remove("active");
+
+});
+
+});
