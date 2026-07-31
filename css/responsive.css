@@ -660,3 +660,60 @@ max-width:100%;
 }
 
 }
+@media(max-width:768px){
+
+.hero{
+
+text-align:center;
+
+padding:120px 20px 80px;
+
+}
+
+.hero-container{
+
+flex-direction:column;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.hero-info{
+
+justify-content:center;
+
+}
+
+.hero-image{
+
+margin-top:30px;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+}
