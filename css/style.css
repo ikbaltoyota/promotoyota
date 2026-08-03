@@ -2438,27 +2438,45 @@ CONTACT GRID
 
 }
 
-/*==================================================
-FOOTER
-==================================================*/
+/* ===========================
+   FOOTER
+=========================== */
 
 .footer{
 
-    background:#111827;
+    background:#111;
 
-    color:#fff;
+    color:#ddd;
 
-    padding:70px 0 35px;
-
-    text-align:center;
+    padding:80px 0 25px;
 
 }
 
-.footer-logo{
+.footer-grid{
 
-    width:170px;
+    display:grid;
 
-    margin:0 auto 25px;
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    margin-bottom:50px;
+
+}
+
+.footer-about img{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-about p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
 
 }
 
@@ -2466,13 +2484,61 @@ FOOTER
 
     color:#fff;
 
-    margin-bottom:10px;
+    margin-bottom:20px;
+
+    font-size:1.2rem;
 
 }
 
-.footer p{
+.footer ul{
 
-    color:#d1d5db;
+    display:grid;
+
+    gap:14px;
+
+}
+
+.footer ul li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.footer ul li i{
+
+    color:var(--primary);
+
+}
+
+.footer ul li a{
+
+    transition:.3s;
+
+}
+
+.footer ul li a:hover{
+
+    color:var(--primary);
+
+    padding-left:6px;
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:25px;
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:.95rem;
 
 }
 
